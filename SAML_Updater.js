@@ -3,10 +3,11 @@
 	
 */
 
-var version = '0.9';
+alert('test');
 
 function CheckForUpdate(){
 try{
+var version = '0.9';
 	var ScriptId = 60769;
 	GM_xmlhttpRequest ({
 		method: "GET",
