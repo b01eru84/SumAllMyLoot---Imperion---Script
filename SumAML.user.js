@@ -1,3 +1,5 @@
+// Sum all my loot Main file
+var metadata = <><![CDATA[
 // ==UserScript==
 // @name       Sum all my loot
 // @namespace       SumAML
@@ -17,9 +19,10 @@
 // @license       GPL version 3 or any later version; http://www.gnu.org/copyleft/gpl.html
 
 // @require        http://github.com/bcmpinc/travian-timeline-script/raw/I_0.07/jquery-latest.js
-// @require        http://github.com/b01eru84/SumAllMyLoot---Imperion---Script/raw/master/SAML_Utils.js
 // @require        http://github.com/b01eru84/SumAllMyLoot---Imperion---Script/raw/master/SAML_Updater.js
+// @require        http://github.com/b01eru84/SumAllMyLoot---Imperion---Script/raw/master/SAML_Utils.js
 // ==/UserScript==
+]]></>+"";
 
 /*****************************************************************************
  * Copyright (C) 2009 Johnny & Mishu
