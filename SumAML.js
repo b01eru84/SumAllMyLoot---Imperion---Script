@@ -1,22 +1,45 @@
+// Sum all my loot Main file
+var metadata = <><![CDATA[
 // ==UserScript==
 // @name           		Sum all my loot
-// @namespace		SumAML
+// @namespace      	SumAML
+// @version        		1.01
 // @description		Sum all my loot - Imperion
+ 
+// @include		http://*.imperion.*/*
+// @exclude		http://forum.imperion.*/*
+// @exclude		http://wiki.imperion.*/*
+// @exclude		http://portal.imperion.*/*
+// @exclude		http://*.imperion.*/login/*
+// @exclude		http://*.imperion.*/supportExternal/*
+ 
+// @copyright		2009 Johnny & Mishu (http://github.com/b01eru84/SumAllMyLoot---Imperion---Script)
+// @author         		Johnny
+// @author         		Mishu
+// @license        		GPL version 3 or any later version; http://www.gnu.org/copyleft/gpl.html
 
-//# Pages
-// @include        	http://*imperion*/fleetBase/show/*
-// @include        	http://*imperion*/planet/buildings/*/buildingType/*610
-// @include        	http://*imperion*/fleet/endEngagement/*/gid/*
-
-//# Scripts
-
-
-// @version        	0.7
-// @license        	GPL version 3 or any later version; http://www.gnu.org/copyleft/gpl.html
-// @author         	Johnny & Mishu
-// @date           	30/10/09
+// @require		http://github.com/b01eru84/SumAllMyLoot---Imperion---Script/raw/master/SAML_Utils.js
+// @require		http://github.com/b01eru84/SumAllMyLoot---Imperion---Script/raw/master/SAML_Updater.js
 // ==/UserScript==
+]]></>+"";
 
+/*****************************************************************************
+ * Copyright (C) 2009 Johnny & Mishu
+ *
+ * This is free software; you can redistribute it and/or modify it under the
+ * terms of the GNU General Public License as published by the Free Software
+ * Foundation; either version 3 of the License, or (at your option) any later
+ * version.
+ *
+ * This is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE. See the GNU Public License for more details
+ *
+ * To obtain a copy of the GNU General Public License, please see
+ * <http://www.gnu.org.licenses/>
+ *****************************************************************************/
+
+CheckForUpdate();
 
 // author         Buzzy
 // http://userscripts.org/scripts/show/52251
@@ -290,8 +313,10 @@ AddDonation();
 
 try {
 
-autoUpdate (60769, "0.7");
-GetVersion (60769, "0.6");
+//autoUpdate (60769, "0.7");
+//GetVersion (60769, "0.6");
+
+
 
 var race = "0";
 for (var i = document.styleSheets.length-1; i >= 0; i--) {

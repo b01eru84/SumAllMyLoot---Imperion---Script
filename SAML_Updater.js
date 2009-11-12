@@ -3,6 +3,7 @@
 	
 */
 
+var version = '0.9';
 
 function CheckForUpdate(){
 	var ScriptId = 60769;
@@ -26,6 +27,7 @@ function CheckForUpdate(){
 			var name = userScripts.getElementById ("details").childNodes[1].innerHTML;
 			
 			if (trim (newVersion) != trim (version)){
+				alert('avemversiunenoua');
 			}
 		}
 	});
