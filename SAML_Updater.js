@@ -6,7 +6,7 @@
 //var global = this;
 
 
-alert('test');
+//alert('test');
 
 function CheckForUpdate(){
 try{
