@@ -6,6 +6,7 @@
 var version = '0.9';
 
 function CheckForUpdate(){
+try{
 	var ScriptId = 60769;
 	GM_xmlhttpRequest ({
 		method: "GET",
@@ -31,5 +32,10 @@ function CheckForUpdate(){
 			}
 		}
 	});
+}
+catch(e)
+{
+alert(e);
+}
 }
 
