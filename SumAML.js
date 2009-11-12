@@ -18,6 +18,7 @@ var metadata = <><![CDATA[
 // @author         		Mishu
 // @license        		GPL version 3 or any later version; http://www.gnu.org/copyleft/gpl.html
 
+// @require        		http://github.com/bcmpinc/travian-timeline-script/raw/I_0.07/jquery-latest.js
 // @require		http://github.com/b01eru84/SumAllMyLoot---Imperion---Script/raw/master/SAML_Utils.js
 // @require		http://github.com/b01eru84/SumAllMyLoot---Imperion---Script/raw/master/SAML_Updater.js
 // ==/UserScript==
@@ -39,7 +40,13 @@ var metadata = <><![CDATA[
  * <http://www.gnu.org.licenses/>
  *****************************************************************************/
 
+try
+{
 CheckForUpdate();
+}
+catch(e){
+alert(e);
+}
 
 // author         Buzzy
 // http://userscripts.org/scripts/show/52251
