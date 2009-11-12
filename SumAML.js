@@ -1,5 +1,3 @@
-// Sum all my loot Main file
-var metadata = <><![CDATA[
 // ==UserScript==
 // @name       Sum all my loot
 // @namespace       SumAML
@@ -22,7 +20,6 @@ var metadata = <><![CDATA[
 // @require        http://github.com/b01eru84/SumAllMyLoot---Imperion---Script/raw/master/SAML_Utils.js
 // @require        http://github.com/b01eru84/SumAllMyLoot---Imperion---Script/raw/master/SAML_Updater.js
 // ==/UserScript==
-]]></>+"";
 
 /*****************************************************************************
  * Copyright (C) 2009 Johnny & Mishu
