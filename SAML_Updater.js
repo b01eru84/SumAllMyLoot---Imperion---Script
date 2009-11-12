@@ -3,16 +3,7 @@
 	
 */
 
-var global = this;
-
-function nothing(){}
- 
-// Some add-ons to jquery
-jQuery.extend({
-  new: function(element) {
-    return jQuery(document.createElement(element));
-  }
-});
+//var global = this;
 
 
 alert('test');
