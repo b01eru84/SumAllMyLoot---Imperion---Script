@@ -22,7 +22,18 @@ var metadata = <><![CDATA[
 // @require		http://github.com/b01eru84/SumAllMyLoot---Imperion---Script/raw/master/SAML_Updater.js
 // ==/UserScript==
 ]]></>+"";
-
+//test line
+//test line//test line//test line//test line//test line//test line//test line//test//test line//test
+//test line
+//test line
+//test line
+//test line
+//test line
+//test line
+//test line
+//test line
+//test line
+//test line
 /*****************************************************************************
  * Copyright (C) 2009 Johnny & Mishu
  *
@@ -457,5 +468,5 @@ GM_xmlhttpRequest ({
 					document.getElementsByTagName("body")[0].appendChild(aaa);
 			}
 		}
-});
+}); //mishu
 }
