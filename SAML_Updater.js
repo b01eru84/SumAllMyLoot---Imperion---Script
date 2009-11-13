@@ -6,7 +6,7 @@
 //var global = this;
 
 
-function TestUpdate(){
+function CallUpdate(){
 	alert('1');
 	var version = metadata.setting('version');
 	alert('2');
@@ -46,4 +46,13 @@ function CheckForUpdate(){
 	}
 }
 
-//TestUpdate();
+function addUpdateString(){
+	//<div align="center" class="floatLeft " style="width: 100%; height: 24px;">
+	//	<a style="cursor: pointer;" class="colorLightGrey">test</a>
+	//</div>
+	var headMainDiv = document.getElementById('head');
+	headMainDiv.innerHTML += 
+		"<div align=\"center\" class=\"floatLeft \" style=\"width: 100%; height: 24px;\">"+
+			"<a style=\"cursor: pointer;\" class=\"colorLightGrey\">Update SAML to new version :"+metadata.setting('version')+"</a>"+
+		"</div>";
+}

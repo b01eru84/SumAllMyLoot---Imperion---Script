@@ -1,6 +1,6 @@
 // Sum all my loot Main file
-var metadata = new Object;
-metadata.text = <><![CDATA[
+var metadata = this;
+metadata.innerTEXT = <><![CDATA[
 // ==UserScript==
 // @name			Sum all my loot
 // @namespace		SumAML
@@ -26,9 +26,9 @@ metadata.text = <><![CDATA[
 // ==/UserScript==
 ]]></>+"";
 
-metadata.toArray = metadata.text.split('\n');
+metadata.toArray = metadata.innerTEXT.split('\n');
 metadata.setting = function (name){
-	for (var i=0;i<metadata.toArray.length;i++){		
+	for (var i=0;i < metadata.toArray.length; i++){
 		var myReg = new RegExp('\\b' + name + '\\b');
 		if (metadata.toArray[i].match(myReg)){
 			return String.trim(metadata.toArray[i].split('@'+name)[1]);
