@@ -3,6 +3,16 @@
 	
 */
 
+var race = "0";
+
+function GetRace(){
+	for (var i = document.styleSheets.length-1; i >= 0; i--) {
+		if (document.styleSheets[i].href.match('terran')) { race = 1; break; }
+		if (document.styleSheets[i].href.match('titan')) { race = 2; break; }
+		if (document.styleSheets[i].href.match('xen')) { race = 3; break; }
+	}
+}
+
 function DeleteElement(e){
 	if (e)
 		e.parentNode.removeChild(e);
@@ -79,3 +89,35 @@ function addCommas(nStr)
 	}
 	return x1 + x2;
 }
+
+function PadDigits(n) 
+{ 
+        n = n.toString(); 
+        
+        if (n.length < 2) 
+        { 
+            n = "0" + n;
+        } 
+        return n.toString(); 
+} 
+
+function showDays(days) {
+	var fullHours = Math.round(24 * days);
+	var hours = fullHours % 24;
+	days = Math.floor(fullHours / 24);
+	var minutes = hours % 60;	
+	var a = [];
+	if (days) {
+		a.push(days);
+	}
+	/*if (hours) {
+		a.push(PadDigits(hours));
+	}*/
+
+	if (!a.length) { a.push("< 1 day"); return a.join("");}
+	return a.join(":") + " days";
+}
+
+
+GetRace();
+
