@@ -135,3 +135,5 @@ switch (race)
 	   
 	}
 }
+
+showOnFleetBase();
