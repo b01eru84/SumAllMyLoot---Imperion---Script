@@ -7,7 +7,9 @@
 
 
 function TestUpdate(){
+	alert('1');
 	var version = metadata.setting('version');
+	alert('2');
 	alert(version);
 }
 
