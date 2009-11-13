@@ -1,6 +1,6 @@
 
 function addUpdateMessage(){
-	alert('1');
+	alert('---1');
 	//var headMainDiv = document.getElementById('head');
 	//alert(headMainDiv);
 	//if (headMainDiv){	
@@ -10,5 +10,7 @@ function addUpdateMessage(){
 	//		"</div>";
 	//}
 }
+
+
 
 addUpdateMessage();
