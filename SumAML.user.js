@@ -2,27 +2,27 @@
 var metadata = new Object;
 metadata.text = <><![CDATA[
 // ==UserScript==
-// @name       		Sum all my loot
-// @namespace       	SumAML
-// @version       		1.01
-// @description       	Sum all my loot - Imperion
+// @name			Sum all my loot
+// @namespace		SumAML
+// @version		1.01
+// @description		Sum all my loot - Imperion
  
-// @include       		http://*.imperion.*/*
-// @exclude       		http://forum.imperion.*/*
-// @exclude       		http://wiki.imperion.*/*
-// @exclude       		http://portal.imperion.*/*
-// @exclude       		http://*.imperion.*/login/*
-// @exclude       		http://*.imperion.*/supportExternal/*
+// @include		http://*.imperion.*/*
+// @exclude		http://forum.imperion.*/*
+// @exclude		http://wiki.imperion.*/*
+// @exclude		http://portal.imperion.*/*
+// @exclude		http://*.imperion.*/login/*
+// @exclude		http://*.imperion.*/supportExternal/*
  
-// @copyright       	2009 Johnny & Mishu (http://github.com/b01eru84/SumAllMyLoot---Imperion---Script)
-// @author       		Johnny
-// @author       		Mishu
-// @license       		GPL version 3 or any later version; http://www.gnu.org/copyleft/gpl.html
+// @copyright		2009 Johnny & Mishu (http://github.com/b01eru84/SumAllMyLoot---Imperion---Script)
+// @author			Johnny
+// @author			Mishu
+// @license			GPL version 3 or any later version; http://www.gnu.org/copyleft/gpl.html
 
-// @require        		http://github.com/b01eru84/SumAllMyLoot---Imperion---Script/raw/master/SAML_Updater.js
-// @require        		http://github.com/b01eru84/SumAllMyLoot---Imperion---Script/raw/master/SAML_Utils.js
-// @require        		http://github.com/b01eru84/SumAllMyLoot---Imperion---Script/raw/master/SAML_FleetBase.js
-// @require        		http://github.com/b01eru84/SumAllMyLoot---Imperion---Script/raw/master/SAML_ResearchCenter.js
+// @require		http://github.com/b01eru84/SumAllMyLoot---Imperion---Script/raw/master/SAML_Updater.js
+// @require		http://github.com/b01eru84/SumAllMyLoot---Imperion---Script/raw/master/SAML_Utils.js
+// @require		http://github.com/b01eru84/SumAllMyLoot---Imperion---Script/raw/master/SAML_FleetBase.js
+// @require		http://github.com/b01eru84/SumAllMyLoot---Imperion---Script/raw/master/SAML_ResearchCenter.js
 // ==/UserScript==
 ]]></>+"";
 

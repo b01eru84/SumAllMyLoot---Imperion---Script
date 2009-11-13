@@ -93,43 +93,43 @@ function showOnFleetBase(){
 				  break;
 		   }
 	   
-	   var LocationForMyDiv= document.getElementsByClassName('interface_content_building_content_top')[0];
-	LocationForMyDiv.style.position = "relative";
-	var ResourcesTable =
-		"<div class='colorWhite tile interface_content_building_info_background' style='float:right;position:absolute;top:0;right:0;margin-right: 15px; margin-top: 5px'>"+
-		"<table class='fontSize12 colorWhite fontBold tile interface_content_building_info_background' align='center' style='border-spacing:0;' border='0'>"+
-			"<colgroup>"+
-				"<col style='width: 100px;'>"+
-			"</colgroup>"+
-			"<tbody>"+
-				"<tr class='fleet fontCenter colorGrey'>"+
-					"<td class='fontBold fleet fontLeft colorGrey'>&nbsp;&nbsp;&nbsp;Total:</td> "+
-					"<td class='fontBold fleet fontCenter colorGrey' colspan='6'>"+
-					"<img class='ingameHelp fleet3 fleetPos"+fleetPos+" interface_ships_all"+race+"' src='/img/x.gif' />" +
-					"</td>"+
-				"</tr>"+
-				"<tr class='colorGrey resourceCost bgNoRepeat interface_content_building_info_tile'>"+
-					"<ul class='resourceCost'>"+
-							"<li class='"+resClassMetal+"'>"+addCommas(Metal)+"</li>"+
-					"</ul>"+
-					"<td class='fontBold fleet fontCenter colorGrey'>"+overMetalString+"</td> "+
-				"</tr>"+
-				"<tr class='colorGrey resourceCost bgNoRepeat interface_content_building_info_tile'>"+
-					"<ul class='resourceCost'>"+
-							"<li class='"+resClassCristal+"'>"+addCommas(Cristal)+"</li>"+
-					"</ul>"+
-									"<td class='fontBold fleet fontCenter colorGrey'>"+overCristalString+"</td> "+
-				"</tr>"+
-				"<tr class='colorGrey resourceCost bgNoRepeat interface_content_building_info_tile'>"+
-					"<ul class='resourceCost'>"+
-							"<li class='"+resClassDeuTritiu+"'>"+addCommas(DeuteriuTritiu)+"</li>"+
-					"</ul>"+
-				"<td class='fontBold fleet fontCenter colorGrey'>"+overTritiuString+"</td> "+
-				"</tr>"+
-			"</tbody>"+
-		"</table>"+
+		var LocationForMyDiv= document.getElementsByClassName('interface_content_building_content_top')[0];
+		LocationForMyDiv.style.position = "relative";
+		var ResourcesTable =
+			"<div class='colorWhite tile interface_content_building_info_background' style='float:right;position:absolute;top:0;right:0;margin-right: 15px; margin-top: 5px'>"+
+				"<table class='fontSize12 colorWhite fontBold tile interface_content_building_info_background' align='center' style='border-spacing:0;' border='0'>"+
+					"<colgroup>"+
+						"<col style='width: 100px;'>"+
+					"</colgroup>"+
+					"<tbody>"+
+						"<tr class='fleet fontCenter colorGrey'>"+
+							"<td class='fontBold fleet fontLeft colorGrey'>&nbsp;&nbsp;&nbsp;Total:</td> "+
+							"<td class='fontBold fleet fontCenter colorGrey' colspan='6'>"+
+							"<img class='ingameHelp fleet3 fleetPos"+fleetPos+" interface_ships_all"+race+"' src='/img/x.gif' />" +
+							"</td>"+
+						"</tr>"+
+						"<tr class='colorGrey resourceCost bgNoRepeat interface_content_building_info_tile'>"+
+							"<ul class='resourceCost'>"+
+									"<li class='"+resClassMetal+"'>"+addCommas(Metal)+"</li>"+
+							"</ul>"+
+							"<td class='fontBold fleet fontCenter colorGrey'>"+overMetalString+"</td> "+
+						"</tr>"+
+						"<tr class='colorGrey resourceCost bgNoRepeat interface_content_building_info_tile'>"+
+							"<ul class='resourceCost'>"+
+									"<li class='"+resClassCristal+"'>"+addCommas(Cristal)+"</li>"+
+							"</ul>"+
+											"<td class='fontBold fleet fontCenter colorGrey'>"+overCristalString+"</td> "+
+						"</tr>"+
+						"<tr class='colorGrey resourceCost bgNoRepeat interface_content_building_info_tile'>"+
+							"<ul class='resourceCost'>"+
+									"<li class='"+resClassDeuTritiu+"'>"+addCommas(DeuteriuTritiu)+"</li>"+
+							"</ul>"+
+						"<td class='fontBold fleet fontCenter colorGrey'>"+overTritiuString+"</td> "+
+						"</tr>"+
+					"</tbody>"+
+				"</table>"+
 			"</div>";
-	LocationForMyDiv.innerHTML += ResourcesTable;
+		LocationForMyDiv.innerHTML += ResourcesTable;
 	   
 	   
 	   
