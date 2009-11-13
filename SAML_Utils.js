@@ -1,3 +1,8 @@
+/*
+*		SAML - Util functions
+*
+*
+*/
 
 var race = "0";
 
