@@ -118,6 +118,9 @@ function showDays(days) {
 	return a.join(":") + " days";
 }
 
+String.prototype.trim = function( text ) {
+		return (text || "").replace( /^\s+|\s+$/g, "" );
+}
 
 GetRace();
 
