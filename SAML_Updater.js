@@ -46,4 +46,4 @@ function CheckForUpdate(){
 	}
 }
 
-TestUpdate();
+//TestUpdate();
