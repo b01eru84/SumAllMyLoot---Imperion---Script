@@ -1,6 +1,6 @@
 /*
-	SumAML - Utils script
-	
+*	SumAML - Utils script
+*	
 */
 
 var race = "0";

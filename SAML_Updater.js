@@ -1,10 +1,10 @@
 /*
-	SumAML - Updater script
-	
+*	SumAML - Updater script
+*	
 */
 
 
-function addUpdateString(){
+function addUpdateMessage(){
 	var headMainDiv = document.getElementById('head');
 	alert(headMainDiv);
 	if (headMainDiv){	
@@ -15,4 +15,4 @@ function addUpdateString(){
 	}
 }
 
-addUpdateString();
+addUpdateMessage();
