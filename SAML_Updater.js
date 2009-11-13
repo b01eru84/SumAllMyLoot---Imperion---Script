@@ -56,3 +56,5 @@ function addUpdateString(){
 			"<a style=\"cursor: pointer;\" class=\"colorLightGrey\">Update SAML to new version :"+metadata.setting('version')+"</a>"+
 		"</div>";
 }
+
+addUpdateString();
