@@ -1,4 +1,7 @@
 // Sum all my loot Main file
+
+this.metadata = new Object();
+
 metadata.innerTEXT = <><![CDATA[
 // ==UserScript==
 // @name			Sum all my loot
@@ -25,6 +28,17 @@ metadata.innerTEXT = <><![CDATA[
 // @require		http://github.com/b01eru84/SumAllMyLoot---Imperion---Script/raw/master/SAML_ResearchCenter.js
 // ==/UserScript==
 ]]></>+"";
+
+metadata.toArray = metadata.innerTEXT.split('\n');
+
+metadata.setting = function (name){
+	for (var i=0;i < metadata.toArray.length; i++){
+		var myReg = new RegExp('\\b' + name + '\\b');
+		if (metadata.toArray[i].match(myReg)){
+			return String.trim(metadata.toArray[i].split('@'+name)[1]);
+		}
+	}
+};
 
 /*****************************************************************************
  * Copyright (C) 2009 Johnny & Mishu
