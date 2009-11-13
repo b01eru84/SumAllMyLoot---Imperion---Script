@@ -6,10 +6,11 @@
 //var global = this;
 
 function CheckForUpdate(){
+var version = metadata.setting('version');
+alert(version);
+exit;
 try{
-	var version = metadata.setting('version');
-	alert(version);
-	exit;
+		
 	var ScriptId = 60769;
 	GM_xmlhttpRequest ({
 		method: "GET",
