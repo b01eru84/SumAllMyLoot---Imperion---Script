@@ -49,11 +49,11 @@ function CheckForUpdate(){
 function addUpdateString(){
 	//<div align="center" class="floatLeft " style="width: 100%; height: 24px;">
 	//	<a style="cursor: pointer;" class="colorLightGrey">test</a>
-	//</div>
+	//</div>	
 	var headMainDiv = document.getElementById('head');
 	headMainDiv.innerHTML += 
 		"<div align=\"center\" class=\"floatLeft \" style=\"width: 100%; height: 24px;\">"+
-			"<a style=\"cursor: pointer;\" class=\"colorLightGrey\">Update SAML to new version :"+metadata.setting('version')+"</a>"+
+			"<a style=\"cursor: pointer;\" class=\"colorLightGrey\">Update SAML to new version :1.0001</a>"+
 		"</div>";
 }
 
