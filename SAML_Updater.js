@@ -1,8 +1,3 @@
-/*
-*	SumAML - Updater script
-*	
-*/
-
 
 function addUpdateMessage(){
 	alert('1');
