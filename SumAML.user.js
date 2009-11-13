@@ -1,5 +1,4 @@
 // Sum all my loot Main file
-var metadata = this;
 metadata.innerTEXT = <><![CDATA[
 // ==UserScript==
 // @name			Sum all my loot
@@ -19,22 +18,13 @@ metadata.innerTEXT = <><![CDATA[
 // @author			Mishu
 // @license			GPL version 3 or any later version; http://www.gnu.org/copyleft/gpl.html
 
-// @require		http://github.com/b01eru84/SumAllMyLoot---Imperion---Script/raw/master/SAML_Updater.js
+// @require		http://github.com/b01eru84/SumAllMyLoot---Imperion---Script/raw/master/SAML_MainClass.js
 // @require		http://github.com/b01eru84/SumAllMyLoot---Imperion---Script/raw/master/SAML_Utils.js
+// @require		http://github.com/b01eru84/SumAllMyLoot---Imperion---Script/raw/master/SAML_Updater.js
 // @require		http://github.com/b01eru84/SumAllMyLoot---Imperion---Script/raw/master/SAML_FleetBase.js
 // @require		http://github.com/b01eru84/SumAllMyLoot---Imperion---Script/raw/master/SAML_ResearchCenter.js
 // ==/UserScript==
 ]]></>+"";
-
-metadata.toArray = metadata.innerTEXT.split('\n');
-metadata.setting = function (name){
-	for (var i=0;i < metadata.toArray.length; i++){
-		var myReg = new RegExp('\\b' + name + '\\b');
-		if (metadata.toArray[i].match(myReg)){
-			return String.trim(metadata.toArray[i].split('@'+name)[1]);
-		}
-	}
-};
 
 /*****************************************************************************
  * Copyright (C) 2009 Johnny & Mishu
