@@ -8,7 +8,7 @@
 function showOnFleetBase(){
 	var isFleetBase = document.location.toString().match(/\bfleetBase\b/g) || 
 		document.location.toString().substr(document.location.toString().length - 3, 3)=="610" ||    
-		document.location.toString().match(/\bendEngagement\b/g);
+		document.location.toString().match(/\brecall\b/g);
 	if (isFleetBase)
 	{		
 		var getSumElements = document.getElementsByClassName('resourceCost');
