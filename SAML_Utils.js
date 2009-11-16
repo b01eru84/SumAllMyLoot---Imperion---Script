@@ -106,7 +106,7 @@ function showDays(days) {
 	var fullHours = Math.round(24 * days);
 	var hours = fullHours % 24;
 	days = Math.floor(fullHours / 24);
-	var minutes = hours % 60;	
+	var minutes = Math.floor(hours / 60);	
 	var a = [];
 	if (days) {
 		a.push(days);
@@ -115,7 +115,11 @@ function showDays(days) {
 		a.push(PadDigits(hours));
 	}*/
 
-	if (!a.length) { a.push(PadDigits(hours) + " hour(s)"); return a.join("");}
+	if (!a.length) {
+		a.push(PadDigits(hours) + " hour(s)");
+		a.push(PadDigits(minutes) + " min(s)");
+		return a.join(":");
+	}
 	return a.join(":") + " day(s)";
 }
 
