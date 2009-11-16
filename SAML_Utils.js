@@ -116,7 +116,7 @@ function showDays(days) {
 	}*/
 
 	if (!a.length) { a.push(PadDigits(hours) + " hour(s)"); return a.join("");}
-	return a.join(":") + " days";
+	return a.join(":") + " day(s)";
 }
 
 String.prototype.trim = function( text ) {
