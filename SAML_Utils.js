@@ -115,7 +115,7 @@ function showDays(days) {
 		a.push(PadDigits(hours));
 	}*/
 
-	if (!a.length) { a.push(PadDigits(hours) + "hour(s)"); return a.join("");}
+	if (!a.length) { a.push(PadDigits(hours) + " hour(s)"); return a.join("");}
 	return a.join(":") + " days";
 }
 
