@@ -99,7 +99,7 @@ function showOnFleetBase(){
 		   }
 	   
 		var LocationForMyDiv= document.getElementsByClassName('interface_content_building_content_top')[0];
-		if (getSumElements.length== "block")
+		if (getSumElements.length > 0)
 		{
 			LocationForMyDiv.style.position = "relative";
 			var ResourcesTable =
