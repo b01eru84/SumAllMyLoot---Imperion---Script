@@ -2,7 +2,7 @@
 
 this.metadata = new Object();
 
-metadata.innerTEXT = <><![CDATA[
+this.metadata.innerTEXT = <><![CDATA[
 // ==UserScript==
 // @name			Sum all my loot
 // @namespace		SumAML
@@ -29,9 +29,9 @@ metadata.innerTEXT = <><![CDATA[
 // ==/UserScript==
 ]]></>+"";
 
-metadata.toArray = metadata.innerTEXT.split('\n');
+this.metadata.toArray = metadata.innerTEXT.split('\n');
 
-metadata.setting = function (name){
+this.metadata.setting = function (name){
 	for (var i=0;i < metadata.toArray.length; i++){
 		var myReg = new RegExp('\\b' + name + '\\b');
 		if (metadata.toArray[i].match(myReg)){
