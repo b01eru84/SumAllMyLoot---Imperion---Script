@@ -31,11 +31,11 @@ this.metadata.innerTEXT = <><![CDATA[
 
 this.metadata.toArray = metadata.innerTEXT.split('\n');
 
-this.metadata.setting = function (name){
+metadata.setting = function (name){
 	for (var i=0;i < metadata.toArray.length; i++){
 		var myReg = new RegExp('\\b' + name + '\\b');
 		if (metadata.toArray[i].match(myReg)){
-			return String.trim(metadata.toArray[i].split('@'+name)[1]);
+			return metadata.toArray[i].split('@'+name)[1].trim();
 		}
 	}
 };

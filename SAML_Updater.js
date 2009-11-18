@@ -63,7 +63,7 @@ function ScriptCheck(){
 			//Get the name of the script
 			var name = userScripts.getElementById ("details").childNodes[1].innerHTML;
 			//alert(name);
-			alert(newVersion+"|"+version);
+			//alert(newVersion+"|"+version);
 			if (newVersion != version){
 				var installDiv = document.getElementById('UpdateScript_div');	
 				if (installDiv){	

@@ -123,8 +123,12 @@ function showDays(days) {
 	return a.join(":") + " day(s)";
 }
 
-String.prototype.trim = function( text ) {
-		return (text || "").replace( /^\s+|\s+$/g, "" );
+//String.prototype.trim = function( text ) {
+		//return (text || "").replace( /^\s+|\s+$/g, "" );
+//}
+
+String.prototype.trim = function() {
+		return this.replace( /^\s+|\s+$/g, "" );
 }
 
 GetRace();
