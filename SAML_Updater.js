@@ -57,4 +57,4 @@ function ScriptCheck(){
 
 
 
-//addUpdateMessage();
+addUpdateMessage();
