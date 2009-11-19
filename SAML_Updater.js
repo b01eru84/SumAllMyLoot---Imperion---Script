@@ -4,12 +4,6 @@
 *
 */
 
-/*
-*		SAML - Updater 
-*
-*
-*/
-
 function addUpdateMessage(){	
 	var headMainDiv = document.getElementById('head');	
 	if (headMainDiv){	
@@ -22,26 +16,8 @@ function addUpdateMessage(){
 	listener.addEventListener ("click", ScriptCheck, false);	
 }
 
-// function installScript (){
-	// var days = parseInt (document.getElementById ("autoUpdater_input").value);
-	// var ms = new Date ().getTime ();
-	
-	// if (ok){
-		// if (days == 0){
-			// GM_setValue ("update", "#0");
-			
-			// menuCommand ();
-			// showMessage ();
-		// }else{
-			// GM_setValue ("update", (days*24*60*60*1000 + ms).toString () + "#" + days);
-		// }
-		
-		// window.open ("http://userscripts.org/scripts/source/" + id + ".user.js", "_self");
-		// eliminaElem (document.getElementById ("autoUpdater_divVersion"));
-	// }
-// }
-
 function ScriptCheck(){
+	addStyleToPage(".nounderline:hover {text-decoration:none !important;color:#8E9498 !important;}");
 	var version = metadata.setting('version').trim();
 	GM_xmlhttpRequest ({
 		method: "GET",
@@ -68,9 +44,9 @@ function ScriptCheck(){
 				var installDiv = document.getElementById('UpdateScript_div');	
 				if (installDiv){	
 					installDiv.innerHTML = 
-						"<a id='UpdateScript_text' style='font-weight:bolder;' class='colorLightGrey'>SAML has a new version ("+newVersion+") ?</a>"+
+						"<a id='UpdateScript_text' style='font-weight:bolder' class='colorLightGrey nounderline'>SAML has a new version ("+newVersion+") ?</a>"+
 						"<a id='UpdateScript_install' style='cursor: pointer; font-weight:bolder;margin-left:8px;' class='colorLightGrey'>[Install]</a>"+
-						"<a style='margin-left:8px;' class='colorLightGrey'>|</a>"+
+						"<a style='margin-left:8px;' class='colorLightGrey nounderline'>|</a>"+
 						"<a id='UpdateScript_cancel' style='cursor: pointer; font-weight:bolder;margin-left:8px;' class='colorLightGrey'>[Cancel]</a>";						
 				}
 			}

@@ -6,7 +6,7 @@ this.metadata.innerTEXT = <><![CDATA[
 // ==UserScript==
 // @name			Sum all my loot
 // @namespace		SumAML
-// @version		1.02
+// @version		1.2.1
 // @description		Sum all my loot - Imperion
  
 // @include		http://*.imperion.*/*
@@ -31,7 +31,7 @@ this.metadata.innerTEXT = <><![CDATA[
 
 this.metadata.toArray = metadata.innerTEXT.split('\n');
 
-metadata.setting = function (name){
+this.metadata.setting = function (name){
 	for (var i=0;i < metadata.toArray.length; i++){
 		var myReg = new RegExp('\\b' + name + '\\b');
 		if (metadata.toArray[i].match(myReg)){
