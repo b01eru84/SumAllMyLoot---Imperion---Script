@@ -54,7 +54,7 @@ function ScriptCheck(){
 			else{
 				var checkDiv = document.getElementById('UpdateScript_check');	
 				if (checkDiv)	
-					checkDiv.innerHTML += " - No new version...";				
+					checkDiv.innerHTML = "Check for a new version to SAML script - No new version...";				
 			}
 		}
 	});
