@@ -15,7 +15,7 @@ function showOnResearchCenter(){
 		var currPoints = new Array();
 		var productionPoints = new Array();
 		
-		for(var i = 0; i < researchTables.length; i++)
+		for(var i = 1; i < researchTables.length; i++)
 		{
 			try
 			{
