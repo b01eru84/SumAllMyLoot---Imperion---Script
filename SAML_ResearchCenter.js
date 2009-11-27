@@ -15,7 +15,7 @@ function showOnResearchCenter(){
 		var currPoints = new Array();
 		var productionPoints = new Array();
 		
-		for(var i = 0; i < researchTables.length; i++)
+		for(var i = 1; i < researchTables.length; i++)
 		{
 			//total points
 			var currPointsDiv = researchTables[i].rows[0].cells[2].getElementsByClassName('researchPoints fontSize18 colorWhite fontBold fontColorRace bgNoRepeat 	interface_fleet_table_background')[0];
