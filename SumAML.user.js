@@ -6,7 +6,7 @@ this.metadata.innerTEXT = <><![CDATA[
 // ==UserScript==
 // @name			Sum all my loot
 // @namespace		SumAML
-// @version		1.2.2
+// @version		1.2.3
 // @description		Sum all my loot - Imperion
  
 // @include		http://*.imperion.*/*
@@ -26,6 +26,7 @@ this.metadata.innerTEXT = <><![CDATA[
 // @require		http://github.com/b01eru84/SumAllMyLoot---Imperion---Script/raw/master/SAML_Updater.js
 // @require		http://github.com/b01eru84/SumAllMyLoot---Imperion---Script/raw/master/SAML_FleetBase.js
 // @require		http://github.com/b01eru84/SumAllMyLoot---Imperion---Script/raw/master/SAML_ResearchCenter.js
+// @require		http://github.com/b01eru84/SumAllMyLoot---Imperion---Script/raw/master/SAML_Alliancee.js
 // ==/UserScript==
 ]]></>+"";
 
