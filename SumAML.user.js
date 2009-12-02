@@ -26,7 +26,7 @@ this.metadata.innerTEXT = <><![CDATA[
 // @require		http://github.com/b01eru84/SumAllMyLoot---Imperion---Script/raw/master/SAML_Updater.js
 // @require		http://github.com/b01eru84/SumAllMyLoot---Imperion---Script/raw/master/SAML_FleetBase.js
 // @require		http://github.com/b01eru84/SumAllMyLoot---Imperion---Script/raw/master/SAML_ResearchCenter.js
-// @require		http://github.com/b01eru84/SumAllMyLoot---Imperion---Script/raw/master/SAML_Alliancee.js
+// @require		http://github.com/b01eru84/SumAllMyLoot---Imperion---Script/raw/master/SAML_Alliance.js
 // ==/UserScript==
 ]]></>+"";
 
