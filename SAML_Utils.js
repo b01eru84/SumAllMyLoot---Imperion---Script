@@ -6,6 +6,9 @@
 
 var race = "0";
 
+var RecyclerPayLoad = new Array(500,1000,800,20000);
+var RecyclerName = new Array("Terran Recycler","Recycler","Octopon","Terran Large Recycler");
+
 function GetRace(){
 	for (var i = document.styleSheets.length-1; i >= 0; i--) {
 		if (document.styleSheets[i].href.match('terran')) { race = 1; break; }
