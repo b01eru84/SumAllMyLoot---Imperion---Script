@@ -5,6 +5,7 @@
 */
 
 function showOnRecycle(){
+try{
 	var isComet = document.location.toString().match(/\comet\b/g);
 	if (isComet){
 		var divCometInfo = document.getElementById("mapDialog_cometInfo");
@@ -13,9 +14,7 @@ function showOnRecycle(){
 			var Metal = document.getElementById("orbInfo_resourceCometMetal").innerHTML.match(/\d+/g).join("");
 			var Crystal = document.getElementById("orbInfo_resourceCometCrystal").innerHTML.match(/\d+/g).join("");
 			var DeuTri = document.getElementById("orbInfo_resourceCometDeuTri").innerHTML.match(/\d+/g).join("");
-			
-			
-			
+								
 			var trNou1 = document.createElement("tr");
 			RowsWithData.appendChild(trNou1);
 			var tdNou1 = document.createElement("td");
@@ -61,7 +60,11 @@ function showOnRecycle(){
 		}
 	}
 
+}
 
+catch(e){
+alert(e);
+}
 }
 
 showOnRecycle();
