@@ -4,7 +4,26 @@
 *
 */
 
+function myFunction(e){
+	//alert(1);	
+	var mapInfo = document.getElementById('mapInfo');
+	alert(mapInfo.className);
+}
+
 function showOnRecycle(){
+	var isMap = document.location.toString().match(/\map\b/g);	
+	if (isMap){		
+		var mapgalaxy = document.getElementById('mapGalaxy');
+		if (mapgalaxy){			
+			var planets = mapgalaxy.getElementsByTagName("img");			
+			for (var i=0;i<planets.length;i++){				
+				planets[i].addEventListener ("mouseover",myFunction,false);
+			}
+		}
+		//el.addEventListener ("mouseover",myFunction,false);
+	}
+	
+	
 	var issComet = document.location.toString().match(/(comet)/g);
 	if (issComet){
 		var divCometInfo = document.getElementById("mapDialog_cometInfo");
@@ -16,6 +35,7 @@ function showOnRecycle(){
 			for (var i = 3;i<RowsWithData.rows.length;i++){
 				RowsWithData.removeChild(RowsWithData.rows[i]);
 			}
+			//test();
 			var trNou1 = document.createElement("tr");
 			RowsWithData.appendChild(trNou1);
 			var tdNou1 = document.createElement("td");
