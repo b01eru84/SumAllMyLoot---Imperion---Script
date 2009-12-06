@@ -37,25 +37,14 @@ function addStyleToPage(cssText){
 
 function addStyleToElement(elementId,cssText){
 	var Elem = document.getElementById(elementId);
-	if (Elem){
-		Elem.setAttribute('style',cssText);
-	}
-	else
-	{
-		elementId.setAttribute('style',cssText);
-	}
+	if (Elem) {Elem.setAttribute('style',cssText);}
+	else {elementId.setAttribute('style',cssText);}
 }
 
 function jsHideDiv(DivName){	
-	var aDiv = document.getElementById(DivName);	
-	if (aDiv.style.display == 'block') 
-		{
-			aDiv.style.display = 'none';
-		}
-	else
-		{
-			aDiv.style.display = 'block';
-		}	
+	var aDiv = document.getElementById(DivName);
+	if (aDiv.style.display == 'block') {aDiv.style.display = 'none';}
+	else {aDiv.style.display = 'block';}	
 }
 
 function addCommas(nStr)
@@ -73,13 +62,9 @@ function addCommas(nStr)
 
 function PadDigits(n) 
 { 
-        n = n.toString(); 
-        
-        if (n.length < 2) 
-        { 
-            n = "0" + n;
-        } 
-        return n.toString(); 
+	n = n.toString();         
+	if (n.length < 2) { n = "0" + n; } 
+	return n.toString(); 
 } 
 
 function showDays(days) {
@@ -88,13 +73,8 @@ function showDays(days) {
 	days = Math.floor(fullHours / 24);
 	var minutes = hours % 60;	
 	var a = [];
-	if (days) {
-		a.push(days);
-	}
-	/*if (hours) {
-		a.push(PadDigits(hours));
-	}*/
-
+	if (days) {a.push(days);}
+	/*if (hours) {a.push(PadDigits(hours));}*/
 	if (!a.length) {
 		a.push(PadDigits(hours) + " h");
 		a.push(PadDigits(minutes) + " m");
@@ -103,9 +83,13 @@ function showDays(days) {
 	return a.join(":") + " day(s)";
 }
 
-//String.prototype.trim = function( text ) {
-		//return (text || "").replace( /^\s+|\s+$/g, "" );
-//}
+//String.prototype.trim = function( text ) {return (text || "").replace( /^\s+|\s+$/g, "" );}
+
+String.prototype.trim = function() {return this.replace( /^\s+|\s+$/g, "" );}
+
+//////////////////////////////////////////////////////////////////////////////
+//			Email Sender - - - Begin
+//////////////////////////////////////////////////////////////////////////////
 
 //<form method="post" id="messageForm" action="/message/send" name="message" style="display:none;">
 //<input type="hidden" value="c3aa" name="c" id="c"/>
@@ -114,34 +98,44 @@ function showDays(days) {
 //<textarea style="display:none;" name="message[text]" id="message_text"></textarea>
 //</form>
 
-function getNewSubmitForm(){
- var submitForm = document.createElement("FORM");
- document.body.appendChild(submitForm);
- submitForm.method = "POST";
- return submitForm;
+function SendMessages(Users,Suject,Message){
+	for (User in Users) {SendMessage(Users[User],Suject,Message);}
 }
 
-//helper function to add elements to the form
-function createNewFormElement(inputForm, elementName, elementValue){
- var newElement = document.createElement("<input name='"+elementName+"' type='hidden'>");
- inputForm.appendChild(newElement);
- newElement.value = elementValue;
- return newElement;
+function SendMessage(User,Suject,Message){
+	var Form = getNewForm("POST",["id","name","style"],["messageForm","message","display:none;"]);
+	NewFormElement(Form,"input","c3aa",["type","name","id"],["hidden","c","c"]);
+	NewFormElement(Form,"input",User,["type","name","id"],["hidden","message[recipientName]","message_recipientName"]);
+	NewFormElement(Form,"input",Suject,["type","name","id"],["hidden","message[subject]","message_subject"]);
+	NewFormElement(Form,"textarea",Message,["style","name","id"],["display:none;","message[text]","message_text"]);		
+	Form.action= "/message/send";
+	Form.submit();
 }
 
-//function that creates the form, adds some elements
-//and then submits it
-function createFormAndSubmit(){
- var submitForm = getNewSubmitForm();
- createNewFormElement(submitForm, "field1", "somevalue");
- createNewFormElement(submitForm, "field2", "somevalue");
- submitForm.action= "someURL";
- submitForm.submit();
+function NewFormElement(theForm, elType, elValue, elAttr, elAttrValues){	
+	var newFE = document.createElement(elType);
+	for (var attr=0;attr<elAttr.length;attr++){
+		newFE.setAttribute(elAttr[attr],elAttrValues[attr]);
+	}
+	newFE.value = elementValue;
+	theForm.appendChild(newFE);	
+	return newFE;
 }
 
-String.prototype.trim = function() {
-		return this.replace( /^\s+|\s+$/g, "" );
+function getNewForm(theMethod, formAttr, formAttrValues){
+	var theForm = document.createElement("FORM");
+	for (var attr=0;attr<formAttr.length;attr++){
+		theForm.setAttribute(formAttr[attr],formAttrValues[attr]);
+	}
+	theForm.method = theMethod;
+	document.body.appendChild(theForm);
+	return theForm;
 }
+
+
+//////////////////////////////////////////////////////////////////////////////
+//			Email Sender - - - End
+//////////////////////////////////////////////////////////////////////////////
 
 GetRace();
 

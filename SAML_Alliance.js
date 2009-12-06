@@ -10,12 +10,20 @@ function showOnAlliance(){
 	{
 		var MembersDiv = document.getElementsByClassName('fleetTable members bgNoRepeat interface_fleet_table_background')[0];
 		if (MembersDiv){
-			membersTable=MembersDiv.getElementsByTagName("table")[0];			
+			membersTable=MembersDiv.getElementsByTagName("table")[0];
+			cols = membersTable.getElementsByTagName("colgroup")[0].getElementsByTagName("col");
+			var newCol = document.createElement("col");
+			newCol.setAttribute ("style", "width: 40px;");		
+			membersTable.getElementsByTagName("colgroup")[0].insertBefore(newCol,cols[1]);
+			titles = membersTable.getElementsByTagName("thead")[0].rows[2];			
+			var aTitle = document.createElement("td");
+			aTitle.setAttribute("class","borderNone");
+			titles.insertBefore(aTitle,titles.cells[0]);
 			//add combo
-			parent = membersTable.getElementsByTagName("thead")[0].rows[0];
+			parent = membersTable.getElementsByTagName("thead")[0].rows[0];			
 			parent.cells[0].setAttribute ("colspan", "4");		
 			var elementNou = document.createElement("td");
-			elementNou.setAttribute ("colspan", "2");
+			elementNou.setAttribute ("colspan", "3");
 			elementNou.setAttribute ("class", "borderNone");
 			elementNou.setAttribute ("style","padding:0 !important");
 			parent.appendChild(elementNou);
@@ -31,7 +39,18 @@ function showOnAlliance(){
 				"<option value=\"5\">Offline</option>"+
 				"<option value=\"6\">Pending</option>";						
 			elementNou.appendChild(comboNou);
+
 			comboNou.addEventListener ("change", changeSelect, false);
+			elements = membersTable.getElementsByTagName("tbody")[0];
+			//alert(elements);
+			for (var i=1;i<elements.rows.length;i +=2){
+				var newCheckBox = document.createElement("input");
+				newCheckBox.setAttribute("type","checkbox");
+				newCheckBox.setAttribute("name","checkbox")
+				var elementNou = document.createElement("td");
+				elementNou.appendChild(newCheckBox);				
+				elements.rows[i].insertBefore(elementNou,elements.rows[i].cells[1]);				
+			}				
 		}
 	}
 }
