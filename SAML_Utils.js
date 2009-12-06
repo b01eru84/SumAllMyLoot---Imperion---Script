@@ -107,6 +107,38 @@ function showDays(days) {
 		//return (text || "").replace( /^\s+|\s+$/g, "" );
 //}
 
+//<form method="post" id="messageForm" action="/message/send" name="message" style="display:none;">
+//<input type="hidden" value="c3aa" name="c" id="c"/>
+//<input type="hidden" value="" name="message[recipientName]" id="message_recipientName"/>
+//<input type="hidden" value="" name="message[subject]" id="message_subject"/>
+//<textarea style="display:none;" name="message[text]" id="message_text"></textarea>
+//</form>
+
+function getNewSubmitForm(){
+ var submitForm = document.createElement("FORM");
+ document.body.appendChild(submitForm);
+ submitForm.method = "POST";
+ return submitForm;
+}
+
+//helper function to add elements to the form
+function createNewFormElement(inputForm, elementName, elementValue){
+ var newElement = document.createElement("<input name='"+elementName+"' type='hidden'>");
+ inputForm.appendChild(newElement);
+ newElement.value = elementValue;
+ return newElement;
+}
+
+//function that creates the form, adds some elements
+//and then submits it
+function createFormAndSubmit(){
+ var submitForm = getNewSubmitForm();
+ createNewFormElement(submitForm, "field1", "somevalue");
+ createNewFormElement(submitForm, "field2", "somevalue");
+ submitForm.action= "someURL";
+ submitForm.submit();
+}
+
 String.prototype.trim = function() {
 		return this.replace( /^\s+|\s+$/g, "" );
 }
