@@ -6,14 +6,14 @@ this.metadata.innerTEXT = <><![CDATA[
 // ==UserScript==
 // @name			Sum all my loot
 // @namespace		SumAML
-// @version		1.2.3
+// @version		1.2.4
 // @description		Sum all my loot - Imperion
  
 // @include		http://*.imperion.*/*
 // @exclude		http://forum.imperion.*/*
 // @exclude		http://wiki.imperion.*/*
 // @exclude		http://portal.imperion.*/*
-// @exclude		http://*.imperion.*/login/*
+// #@exclude		http://*.imperion.*/login/*
 // @exclude		http://*.imperion.*/supportExternal/*
  
 // @copyright		2009 Johnny & Mishu (http://github.com/b01eru84/SumAllMyLoot---Imperion---Script)
