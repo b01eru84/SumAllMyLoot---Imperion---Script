@@ -41,7 +41,7 @@ function addStyleToElement(elementId,cssText){
 	else {elementId.setAttribute('style',cssText);}
 }
 
-function jsHideDiv(DivName){	
+function jsHideDiv(DivName){
 	var aDiv = document.getElementById(DivName);
 	if (aDiv.style.display == 'block') {aDiv.style.display = 'none';}
 	else {aDiv.style.display = 'block';}	
@@ -91,34 +91,22 @@ String.prototype.trim = function() {return this.replace( /^\s+|\s+$/g, "" );}
 //			Email Sender - - - Begin
 //////////////////////////////////////////////////////////////////////////////
 
-//<form method="post" id="messageForm" action="/message/send" name="message" style="display:none;">
-//<input type="hidden" value="c3aa" name="c" id="c"/>
-//<input type="hidden" value="" name="message[recipientName]" id="message_recipientName"/>
-//<input type="hidden" value="" name="message[subject]" id="message_subject"/>
-//<textarea style="display:none;" name="message[text]" id="message_text"></textarea>
-//</form>
+function genHex(){
+    var hexArray = new Array( "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F" );    
+    var decToHex = new String();
+	for (var i=0;i<4;i++)
+		decToHex += hexArray[Math.floor(Math.random()*16)];
+    return (decToHex);
+} 
 
-function SendMessages(Users,Suject,Message){
-	for (User in Users) {SendMessage(Users[User],Suject,Message);}
-}
-
-function SendMessage(User,Suject,Message){
-	var Form = getNewForm("POST",["id","name","style"],["messageForm","message","display:none;"]);
-	NewFormElement(Form,"input","c3aa",["type","name","id"],["hidden","c","c"]);
-	NewFormElement(Form,"input",User,["type","name","id"],["hidden","message[recipientName]","message_recipientName"]);
-	NewFormElement(Form,"input",Suject,["type","name","id"],["hidden","message[subject]","message_subject"]);
-	NewFormElement(Form,"textarea",Message,["style","name","id"],["display:none;","message[text]","message_text"]);		
-	Form.action= "/message/send";
-	Form.submit();
-}
-
-function NewFormElement(theForm, elType, elValue, elAttr, elAttrValues){	
+function NewElement(theParent, elType, elValue, elAttr, elAttrValues){	
 	var newFE = document.createElement(elType);
-	for (var attr=0;attr<elAttr.length;attr++){
-		newFE.setAttribute(elAttr[attr],elAttrValues[attr]);
+	for (var attr=0;attr<elAttr.length;attr++){ newFE.setAttribute(elAttr[attr],elAttrValues[attr]); }
+	if (elValue){ 
+		if (elType == "input")	newFE.value = elValue;
+		else newFE.innerHTML = elValue;
 	}
-	newFE.value = elementValue;
-	theForm.appendChild(newFE);	
+	theParent.appendChild(newFE);	
 	return newFE;
 }
 
@@ -132,6 +120,22 @@ function getNewForm(theMethod, formAttr, formAttrValues){
 	return theForm;
 }
 
+function post(url, data, cb) {
+  GM_xmlhttpRequest({
+    method: "POST",
+    url: url,
+    headers:{'Content-type':'application/x-www-form-urlencoded'},
+    data:encodeURI(data),
+    onload: function(xhr) { if (cb) cb(xhr.responseText); }
+  });
+}
+
+function handleResponse(text){GM_log(text);}
+
+function SendMessage2(Users,Suject,Message){
+	var URL = "http://"+document.location.toString().match(/https?:\/\/([-\w\.]+)+(:\d+)?(\/([\w/_\.]*(\?\S+)?)?)?/)[1]+"/message/send";	
+	for (var x=0;x<Users.length;x++) {var  parm = "c="+genHex()+"&message[recipientName]="+Users[x]+"&message[subject]="+Suject+"&message[text]="+Message; post(URL,parm,null);	}
+}
 
 //////////////////////////////////////////////////////////////////////////////
 //			Email Sender - - - End
