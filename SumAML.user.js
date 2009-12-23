@@ -6,7 +6,7 @@ this.metadata.innerTEXT = <><![CDATA[
 // ==UserScript==
 // @name			Sum all my loot
 // @namespace		SumAML
-// @version		1.2.5
+// @version		1.2.6
 // @description		Sum all my loot - Imperion
  
 // @include		http://*.imperion.*/*
