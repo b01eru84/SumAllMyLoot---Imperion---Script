@@ -10,8 +10,11 @@ function myFunction(e){
 }
 
 function showOnRecycle(){
-	// var isMap = document.location.toString().match(/\map\b/g);	
-	// if (isMap){		
+	var isMap = document.location.toString().match(/\map\b/g);	
+	if (isMap){
+		InitListener("mapDialog_cometInfo","style",OnCometEnterComplete);
+		InitListener("mapDialog_asteroidInfo","style",OnAsteroidEnterComplete);
+		InitListener("mapDialog_debrisInfo","style",OnDebrisEnterComplete);
 		// var mapgalaxy = document.getElementById('mapGalaxy');
 		// if (mapgalaxy){			
 			// var planets = mapgalaxy.getElementsByTagName("img");			
@@ -20,7 +23,7 @@ function showOnRecycle(){
 			// }
 		// }
 		////el.addEventListener ("mouseover",myFunction,false);
-	// }
+	}
 }
 
 function InitListener (div,attrName,onFire) {
@@ -156,10 +159,6 @@ function OnAttrModified (event) {
 				+ " element is changed to:\n" + event.newValue);
 }
 
-InitListener("mapDialog_cometInfo","style",OnCometEnterComplete);
-InitListener("mapDialog_asteroidInfo","style",OnAsteroidEnterComplete);
-InitListener("mapDialog_debrisInfo","style",OnDebrisEnterComplete);
-
 
 //document.addEventListener ("click", showOnRecycle, false);
-//showOnRecycle();
+showOnRecycle();

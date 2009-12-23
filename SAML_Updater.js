@@ -4,7 +4,7 @@
 *
 */
 
-function addUpdateMessage(){	
+function addUpdateMessage(){
 	var headMainDiv = document.getElementById('head');	
 	if (headMainDiv){	
 		headMainDiv.innerHTML +=
@@ -13,7 +13,7 @@ function addUpdateMessage(){
 			"</div>";
 		var listener = document.getElementById ("UpdateScript_check");
 		listener.addEventListener ("click", ScriptCheck, false);
-	}	
+	}
 }
 
 function ScriptCheck(){
