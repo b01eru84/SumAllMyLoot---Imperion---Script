@@ -62,7 +62,8 @@ function OnCometEnterComplete (event) {
 			tdNou1.innerHTML = RecyclerName[race-1];
 			trNou1.appendChild(tdNou1);
 			var tdNou2 = document.createElement("td");
-			tdNou2.innerHTML = Math.ceil((parseFloat(Metal)+parseFloat(Crystal)+parseFloat(DeuTri)) / parseFloat(RecyclerPayLoad[race-1])).toString();
+			var NumberOfRecyclers = parseFloat((parseFloat(Metal)+parseFloat(Crystal)+parseFloat(DeuTri)) / parseFloat(RecyclerPayLoad[race-1]));
+			tdNou2.innerHTML = Math.floor(NumberOfRecyclers).toString()+" - "+Math.ceil(NumberOfRecyclers).toString();
 			trNou1.appendChild(tdNou2);
 			if (race == 1) {
 				var trNou2 = document.createElement("tr");
@@ -72,7 +73,8 @@ function OnCometEnterComplete (event) {
 				tdNou3.innerHTML = RecyclerName[race-1+3];
 				trNou2.appendChild(tdNou3);
 				var tdNou4 = document.createElement("td");
-				tdNou4.innerHTML = Math.ceil((parseFloat(Metal)+parseFloat(Crystal)+parseFloat(DeuTri)) / parseFloat(RecyclerPayLoad[race-1+3])).toString();
+				var NumberOfBigRecyclers = (parseFloat(Metal)+parseFloat(Crystal)+parseFloat(DeuTri)) / parseFloat(RecyclerPayLoad[race-1+3]);
+				tdNou4.innerHTML = Math.floor(NumberOfBigRecyclers).toString()+" - "+Math.ceil(NumberOfBigRecyclers).toString();
 				trNou2.appendChild(tdNou4);
 			}
 		}
@@ -100,7 +102,8 @@ function OnAsteroidEnterComplete(event) {
 			tdNou1.innerHTML = RecyclerName[race-1];
 			trNou1.appendChild(tdNou1);
 			var tdNou2 = document.createElement("td");
-			tdNou2.innerHTML = Math.ceil((parseFloat(Metal)+parseFloat(Crystal)+parseFloat(DeuTri)) / parseFloat(RecyclerPayLoad[race-1])).toString();
+			var NumberOfRecyclers = (parseFloat(Metal)+parseFloat(Crystal)+parseFloat(DeuTri)) / parseFloat(RecyclerPayLoad[race-1]);
+			tdNou2.innerHTML = Math.floor(NumberOfRecyclers).toString()+" - "+Math.ceil(NumberOfRecyclers).toString();
 			trNou1.appendChild(tdNou2);
 			if (race == 1) {
 				var trNou2 = document.createElement("tr");
@@ -110,7 +113,8 @@ function OnAsteroidEnterComplete(event) {
 				tdNou3.innerHTML = RecyclerName[race-1+3];
 				trNou2.appendChild(tdNou3);
 				var tdNou4 = document.createElement("td");
-				tdNou4.innerHTML = Math.ceil((parseFloat(Metal)+parseFloat(Crystal)+parseFloat(DeuTri)) / parseFloat(RecyclerPayLoad[race-1+3])).toString();
+				var NumberOfBigRecyclers = (parseFloat(Metal)+parseFloat(Crystal)+parseFloat(DeuTri)) / parseFloat(RecyclerPayLoad[race-1+3]);
+				tdNou4.innerHTML = Math.floor(NumberOfBigRecyclers).toString()+" - "+Math.ceil(NumberOfBigRecyclers).toString();
 				trNou2.appendChild(tdNou4);
 			}
 		}
@@ -137,7 +141,8 @@ function OnDebrisEnterComplete(event) {
 			tdNou1.innerHTML = RecyclerName[race-1];
 			trNou1.appendChild(tdNou1);
 			var tdNou2 = document.createElement("td");
-			tdNou2.innerHTML = Math.ceil((parseFloat(Metal)+parseFloat(Crystal)) / parseFloat(RecyclerPayLoad[race-1])).toString();
+			var NumberOfRecyclers = parseFloat((parseFloat(Metal)+parseFloat(Crystal)) / parseFloat(RecyclerPayLoad[race-1]));
+			tdNou2.innerHTML = Math.floor(NumberOfRecyclers).toString()+" - "+Math.ceil(NumberOfRecyclers).toString();		
 			trNou1.appendChild(tdNou2);
 			if (race == 1) {
 				var trNou2 = document.createElement("tr");
@@ -147,7 +152,8 @@ function OnDebrisEnterComplete(event) {
 				tdNou3.innerHTML = RecyclerName[race-1+3];
 				trNou2.appendChild(tdNou3);
 				var tdNou4 = document.createElement("td");
-				tdNou4.innerHTML = Math.ceil((parseFloat(Metal)+parseFloat(Crystal)) / parseFloat(RecyclerPayLoad[race-1+3])).toString();
+				var NumberOfBigRecyclers = (parseFloat(Metal)+parseFloat(Crystal)) / parseFloat(RecyclerPayLoad[race-1+3]);
+				tdNou4.innerHTML = Math.floor(NumberOfBigRecyclers).toString()+" - "+Math.ceil(NumberOfBigRecyclers).toString();
 				trNou2.appendChild(tdNou4);
 			}
 		}
