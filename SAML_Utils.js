@@ -7,6 +7,7 @@
 var race = "0";
 
 var RecyclerPayLoad = new Array(500,1000,800,20000);
+var RecyclerShipLocation = new Array(3,4,4,4);
 var RecyclerName = new Array("Terran Recycler","Recycler","Octopon","Terran Large Recycler");
 
 function GetRace(){
