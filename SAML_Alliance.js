@@ -75,16 +75,16 @@ function showOnAlliance(){
 			elementNou.setAttribute ("style","padding:0 !important");
 			parent.appendChild(elementNou);
 			var comboNou = document.createElement("select");
-			//comboNou.setAttribute ("class", "formSelect interface_forms_select");
-			comboNou.style.width = "100%";			
+			//comboNou.setAttribute ("class", "formSelect interface_forms_select");		
 			comboNou.setAttribute ("name", "selectMembers");
 			comboNou.setAttribute ("id", "selectMembers");
+			comboNou.setAttribute ("style", "width:100%;background-color:black;color:white;");
 			comboNou.innerHTML = "<option value=\"1\">All</option>"+
-				"<option value=\"2\">Online</option>"+
-				"<option value=\"3\">Idle</option>"+
-				"<option value=\"4\">UnAvailable</option>"+
-				"<option value=\"5\">Offline</option>"+
-				"<option value=\"6\">Pending</option>";						
+				"<option value=\"2\" class=\"statusAvailable interface_icon_buddylist_status\" style=\"background-repeat:no-repeat; padding-left:20px;\">Online</option>"+
+				"<option value=\"3\" class=\" statusIdle interface_icon_buddylist_status\" style=\"background-repeat:no-repeat; padding-left:20px;\">Idle</option>"+
+				"<option value=\"4\" class=\" statusUnAvailable interface_icon_buddylist_status\" style=\"background-repeat:no-repeat; padding-left:20px;\">UnAvailable</option>"+
+				"<option value=\"5\" class=\" statusOffline interface_icon_buddylist_status\" style=\"background-repeat:no-repeat; padding-left:20px;\">Offline</option>"+
+				"<option value=\"6\" class=\" statusPending interface_icon_buddylist_status\" style=\"background-repeat:no-repeat; padding-left:20px;\">Pending</option>";						
 			elementNou.appendChild(comboNou);
 
 			comboNou.addEventListener ("change", changeSelect, false);

@@ -4,7 +4,6 @@
 *
 */
 
-
 function showOnResearchCenter(){
 	var isResearchCenter = document.location.toString().match(/\bresearchCenter\b/g);
 	if (isResearchCenter)
@@ -19,10 +18,33 @@ function showOnResearchCenter(){
 		{
 			//total points
 			var currPointsDiv = researchTables[i].rows[0].cells[2].getElementsByClassName('researchPoints fontSize18 colorWhite fontBold fontColorRace bgNoRepeat 	interface_fleet_table_background')[0];
-			currPoints[i] = parseFloat(currPointsDiv.innerHTML.match(/\d+/g).join("."));
+			var matchNumber = currPointsDiv.innerHTML.match(/\d+/g).length;
+			var match = currPointsDiv.innerHTML.match(/\d+/g).join(",");
+			
+			for (var j = 2; j < matchNumber; j++)
+			{
+				var idx = match.indexOf(",");
+				match = match.Delete(idx, idx+1);				
+			}			
+			currPoints[i] = match;
+						
+			
+			
 			//production / day
-			var points = researchTables[i].rows[2].cells[0].innerHTML.match(/\d+/g).join(".");
-			productionPoints[i] = parseFloat(points);
+
+			
+			/*var points = researchTables[i].rows[2].cells[0].innerHTML.match(/\d+/g).join(",");
+			productionPoints[i] = parseFloat(points);*/
+			
+			var matchNumberPoints = researchTables[i].rows[2].cells[0].innerHTML.match(/\d+/g).length;
+			var matchPoints = researchTables[i].rows[2].cells[0].innerHTML.match(/\d+/g).join(",");
+			
+			for (var j = 2; j < matchNumberPoints; j++)
+			{
+				var idx = matchPoints.indexOf(",");
+				matchPoints = matchPoints.Delete(idx, idx+1);				
+			}						
+			productionPoints[i] = matchPoints;
 			
 			var extraTableDiv = researchCenterMainDiv.getElementsByClassName('extraTable')[i-1];
 			var categorieDiv = extraTableDiv.getElementsByClassName('fleetTable bgNoRepeat interface_fleet_table_background ')[0];		

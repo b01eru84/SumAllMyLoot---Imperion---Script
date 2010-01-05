@@ -88,6 +88,13 @@ function showDays(days) {
 
 String.prototype.trim = function() {return this.replace( /^\s+|\s+$/g, "" );}
 
+String.prototype.Delete = function(from, to)
+{
+	var tmp = this;	
+	return  tmp.slice(0, from) +  tmp.slice(to, this.length);
+}
+
+
 //////////////////////////////////////////////////////////////////////////////
 //			Email Sender - - - Begin
 //////////////////////////////////////////////////////////////////////////////
