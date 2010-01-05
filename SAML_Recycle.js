@@ -63,7 +63,7 @@ function OnCometEnterComplete (event) {
 			var tdNou1 = document.createElement("td");			
 			var text = "http://"+document.location.toString().match(/https?:\/\/([-\w\.]+)+(:\d+)?(\/([\w/_\.]*(\?\S+)?)?)?/)[1]+"/fleetBase/mission/1/planetId/c"+listLocation[listLocation.length-1].toString()+"/m/301/ships/,,,";
 			//tdNou1.innerHTML = RecyclerName[race-1];			
-			NewElement(tdNou1,"a",RecyclerName[race-1],["href","class"],[text+","+Math.floor(NumberOfRecyclers).toString(),"fontColorRace"]);
+			NewElement(tdNou1,"a",RecyclerName[race-1],["href","class"],[text+","+(Math.floor(NumberOfRecyclers)==0?1:Math.floor(NumberOfRecyclers)).toString(),"fontColorRace"]);
 			trNou1.appendChild(tdNou1);
 			var tdNou2 = document.createElement("td");			
 			//tdNou2.innerHTML = Math.floor(NumberOfRecyclers).toString()+" - "+Math.ceil(NumberOfRecyclers).toString();
@@ -72,7 +72,7 @@ function OnCometEnterComplete (event) {
 						Math.floor(NumberOfRecyclers).toString()+" - "+Math.ceil(NumberOfRecyclers).toString(),
 						["href",
 							"class"],
-						[text+","+Math.floor(NumberOfRecyclers).toString(),
+						[text+","+(Math.floor(NumberOfRecyclers)==0?1:Math.floor(NumberOfRecyclers)).toString(),
 							"fontColorRace"]);
 			trNou1.appendChild(tdNou2);
 			if (race == 1) {
@@ -82,7 +82,7 @@ function OnCometEnterComplete (event) {
 				RowsWithData.appendChild(trNou2);
 				var tdNou3 = document.createElement("td");
 				//tdNou3.innerHTML = RecyclerName[race-1+3];
-				NewElement(tdNou3,"a",RecyclerName[race-1+3],["href","class"],[text+Math.floor(NumberOfBigRecyclers).toString(),"fontColorRace"]);
+				NewElement(tdNou3,"a",RecyclerName[race-1+3],["href","class"],[text+(Math.floor(NumberOfBigRecyclers)==0?1:Math.floor(NumberOfBigRecyclers)).toString(),"fontColorRace"]);
 				trNou2.appendChild(tdNou3);
 				var tdNou4 = document.createElement("td");				
 				//tdNou4.innerHTML = Math.floor(NumberOfBigRecyclers).toString()+" - "+Math.ceil(NumberOfBigRecyclers).toString();
@@ -91,7 +91,7 @@ function OnCometEnterComplete (event) {
 						Math.floor(NumberOfBigRecyclers).toString()+" - "+Math.ceil(NumberOfBigRecyclers).toString(),
 						["href",
 							"class"],
-						[text+Math.floor(NumberOfBigRecyclers).toString(),
+						[text+(Math.floor(NumberOfBigRecyclers)==0?1:Math.floor(NumberOfBigRecyclers)).toString(),
 							"fontColorRace"]);
 				trNou2.appendChild(tdNou4);
 			}
@@ -119,10 +119,19 @@ function OnAsteroidEnterComplete(event) {
 			trNou1.setAttribute("class", "fontColorRace");
 			RowsWithData.appendChild(trNou1);
 			var tdNou1 = document.createElement("td");
-			tdNou1.innerHTML = RecyclerName[race-1];
+			var text = "http://"+document.location.toString().match(/https?:\/\/([-\w\.]+)+(:\d+)?(\/([\w/_\.]*(\?\S+)?)?)?/)[1]+"/fleetBase/mission/1/planetId/a"+listLocation[listLocation.length-1].toString()+"/m/301/ships/,,,";
+			//tdNou1.innerHTML = RecyclerName[race-1];
+			NewElement(tdNou1,"a",RecyclerName[race-1],["href","class"],[text+","+(Math.floor(NumberOfRecyclers)==0?1:Math.floor(NumberOfRecyclers)).toString(),"fontColorRace"]);
 			trNou1.appendChild(tdNou1);
 			var tdNou2 = document.createElement("td");			
-			tdNou2.innerHTML = Math.floor(NumberOfRecyclers).toString()+" - "+Math.ceil(NumberOfRecyclers).toString();
+			//tdNou2.innerHTML = Math.floor(NumberOfRecyclers).toString()+" - "+Math.ceil(NumberOfRecyclers).toString();
+			NewElement(tdNou2,
+						"a",
+						Math.floor(NumberOfRecyclers).toString()+" - "+Math.ceil(NumberOfRecyclers).toString(),
+						["href",
+							"class"],
+						[text+","+(Math.floor(NumberOfRecyclers)==0?1:Math.floor(NumberOfRecyclers)).toString(),
+							"fontColorRace"]);
 			trNou1.appendChild(tdNou2);
 			if (race == 1) {
 				var NumberOfBigRecyclers = (parseFloat(Metal)+parseFloat(Crystal)+parseFloat(DeuTri)) / parseFloat(RecyclerPayLoad[race-1+3]);
@@ -130,10 +139,18 @@ function OnAsteroidEnterComplete(event) {
 				trNou2.setAttribute("class", "fontColorRace");	
 				RowsWithData.appendChild(trNou2);			
 				var tdNou3 = document.createElement("td");
-				tdNou3.innerHTML = RecyclerName[race-1+3];
+				//tdNou3.innerHTML = RecyclerName[race-1+3];
+				NewElement(tdNou3,"a",RecyclerName[race-1+3],["href","class"],[text+(Math.floor(NumberOfBigRecyclers)==0?1:Math.floor(NumberOfBigRecyclers)).toString(),"fontColorRace"]);
 				trNou2.appendChild(tdNou3);
 				var tdNou4 = document.createElement("td");				
-				tdNou4.innerHTML = Math.floor(NumberOfBigRecyclers).toString()+" - "+Math.ceil(NumberOfBigRecyclers).toString();
+				//tdNou4.innerHTML = Math.floor(NumberOfBigRecyclers).toString()+" - "+Math.ceil(NumberOfBigRecyclers).toString();
+				NewElement(tdNou4,
+						"a",
+						Math.floor(NumberOfBigRecyclers).toString()+" - "+Math.ceil(NumberOfBigRecyclers).toString(),
+						["href",
+							"class"],
+						[text+(Math.floor(NumberOfBigRecyclers)==0?1:Math.floor(NumberOfBigRecyclers)).toString(),
+							"fontColorRace"]);
 				trNou2.appendChild(tdNou4);
 			}
 		}
@@ -161,7 +178,7 @@ function OnDebrisEnterComplete(event) {
 			var tdNou1 = document.createElement("td");
 			var text = "http://"+document.location.toString().match(/https?:\/\/([-\w\.]+)+(:\d+)?(\/([\w/_\.]*(\?\S+)?)?)?/)[1]+"/fleetBase/mission/1/planetId/d"+listLocation[listLocation.length-1].toString()+"/m/301/ships/,,,";
 			//tdNou1.innerHTML = RecyclerName[race-1];
-			NewElement(tdNou1,"a",RecyclerName[race-1],["href","class"],[text+","+Math.floor(NumberOfRecyclers).toString(),"fontColorRace"]);			
+			NewElement(tdNou1,"a",RecyclerName[race-1],["href","class"],[text+","+(Math.floor(NumberOfRecyclers)==0?1:Math.floor(NumberOfRecyclers)).toString(),"fontColorRace"]);			
 			trNou1.appendChild(tdNou1);
 			var tdNou2 = document.createElement("td");			
 			//tdNou2.innerHTML = Math.floor(NumberOfRecyclers).toString()+" - "+Math.ceil(NumberOfRecyclers).toString();
@@ -170,7 +187,7 @@ function OnDebrisEnterComplete(event) {
 						Math.floor(NumberOfRecyclers).toString()+" - "+Math.ceil(NumberOfRecyclers).toString(),
 						["href",
 							"class"],
-						[text+","+Math.floor(NumberOfRecyclers).toString(),
+						[text+","+(Math.floor(NumberOfRecyclers)==0?1:Math.floor(NumberOfRecyclers)).toString(),
 							"fontColorRace"]);
 			trNou1.appendChild(tdNou2);
 			if (race == 1) {
@@ -180,7 +197,7 @@ function OnDebrisEnterComplete(event) {
 				RowsWithData.appendChild(trNou2);				
 				var tdNou3 = document.createElement("td");
 				//tdNou3.innerHTML = RecyclerName[race-1+3];
-				NewElement(tdNou3,"a",RecyclerName[race-1+3],["href","class"],[text+Math.floor(NumberOfBigRecyclers).toString(),"fontColorRace"]);
+				NewElement(tdNou3,"a",RecyclerName[race-1+3],["href","class"],[text+(Math.floor(NumberOfBigRecyclers)==0?1:Math.floor(NumberOfBigRecyclers)).toString(),"fontColorRace"]);
 				trNou2.appendChild(tdNou3);
 				var tdNou4 = document.createElement("td");				
 				//tdNou4.innerHTML = Math.floor(NumberOfBigRecyclers).toString()+" - "+Math.ceil(NumberOfBigRecyclers).toString();
@@ -189,7 +206,7 @@ function OnDebrisEnterComplete(event) {
 						Math.floor(NumberOfBigRecyclers).toString()+" - "+Math.ceil(NumberOfBigRecyclers).toString(),
 						["href",
 							"class"],
-						[text+Math.floor(NumberOfBigRecyclers).toString(),
+						[text+(Math.floor(NumberOfBigRecyclers)==0?1:Math.floor(NumberOfBigRecyclers)).toString(),
 							"fontColorRace"]);
 				trNou2.appendChild(tdNou4);
 			}
