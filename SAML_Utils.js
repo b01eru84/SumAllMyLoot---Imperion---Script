@@ -24,8 +24,7 @@ function DeleteElement(e){
 }
 
 function addStyleToPage(cssText){
-	var HeadElement;
-	HeadElement = document.getElementsByTagName('head')[0];
+	var HeadElement = document.getElementsByTagName('head')[0];
 	if (HeadElement){
 		var aStyle = document.createElement('style');
 		if (aStyle){

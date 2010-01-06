@@ -100,3 +100,44 @@ function getPlayersName(){
 // }
 
 //getPlayersName();
+
+function AddUtilsSerives(){
+	try{
+	
+	var newDiv = NewElement(document.body,"div","Edit options",["id","style"],["setting-saml-main","position: fixed; background-color: rgba(64, 64, 64, 0.5); top:50%; left: 0px; width: 100px; line-height:24px; height:24px ; z-index: 40000; text-align: center; color: red; font-weight: bold; -moz-border-radius: 6px; cursor: pointer;"]);	
+	newDiv.addEventListener ("click", 
+		function (){
+			var elemExists = document.getElementById("setting-saml-container");
+			if (!elemExists){
+				var w = NewElement(document.body,"div",null,["id","style"],["setting-saml-container","position: fixed; z-index: 30000; left:0px; top:0px; right:0px;bottom:0px;background: rgba(0,0,0,0.75);"]);
+				NewElement(w,"a",null,["style"],["position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px; cursor: pointer;"]).addEventListener("click", function (){DeleteElement(document.getElementById("setting-saml-container"));} ,false);
+				var w_d = NewElement(w,"div",null,["style"],["position: absolute; left: 50%; top: 50%;"]);
+				
+				var w_divFereastra = NewElement(w_d,"div",null,["style"],["position: absolute; left: -300px; top: -250px; width: 745px;z-index:20000;"]);
+				var w_divTop = NewElement(w_divFereastra,"div",	null,["class","style"],["interface_overlay_top","height:94px;font-family:verdana;font-size:10px;text-align:left;"]);
+				NewElement(w_divTop,"h1","SAML : Settings",["class","style"],["floatLeft","color:#FFFFFF;font-size:14px;height:41px;line-height:45px;padding-left:30px;margin:0;"]);
+				addStyleToPage("a.closeSAML:hover { background-position:0 center !important; } a.closeSAML:active { background-position:0 bottom !important; } ");
+				NewElement(w_divTop,"a",null,["class","style"],["closeSAML floatRight interface_overlay_close","background-position:0 top;background-repeat:no-repeat;display:block;height:36px;margin-right:28px;margin-top:5px;width:40px;cursor:pointer;"]).addEventListener("click", function (){DeleteElement(document.getElementById("setting-saml-container"));} ,false);;
+				NewElement(w_divTop,"div",null,["style"],["clear: both;"]);
+				NewElement(w_divTop,"div",null,["class","style"],["interface_overlay_divider","background-repeat:no-repeat;font-size:2px;height:2px;line-height:2px;"]);
+				var w_divTop_Meniu = NewElement(w_divTop,"ul",null,["class","style"],["tabs","float:left;margin-top:-2px;padding-left:5px;"]);
+				NewElement(NewElement(w_divTop_Meniu,"li",null,[],[]),"a","Tab1",["class","style"],["left interface_overlay_tabs_first active bgLink","cursor:pointer;"]);				
+				
+				var w_divMiddle = NewElement(w_divFereastra,"div",null,["class","style"],["interface_overlay_tile","padding-bottom:20px;padding-left:22px;width:723px;"]);
+				var w_divMiddle_Middle = NewElement(w_divMiddle,"div",null,["class","style"],["colorWhite","width:683px;"]);
+				NewElement(w_divMiddle_Middle,"div",null,["class","style"],["interface_overlay_glass_top","height:26px;width:683px;"]);
+				var w_divMiddle_Middle_Middle = NewElement(w_divMiddle_Middle,"div",null,["class","style"],["interface_overlay_glass_tile colorWhite","width:683px;"]);
+				NewElement(w_divMiddle_Middle_Middle,"p","Text Aici",["class","style"],["colorGrey","font-size:12px;line-height:20px;margin:0 0 0 17px;padding:0;text-align:justify;width:638px;"]);
+				NewElement(w_divMiddle_Middle,"div",null,["class","style"],["interface_overlay_glass_bottom","height:29px;width:683px;"]);
+				
+				NewElement(w_divFereastra,"div",null,["class","style"],["interface_overlay_bottom","height:28px;position:relative;"]);				
+			}
+		}, false);
+		
+	}
+	catch(e){
+		alert(e);
+	}
+}
+
+//AddUtilsSerives();
