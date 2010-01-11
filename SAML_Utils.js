@@ -148,5 +148,33 @@ function SendMessage2(Users,Suject,Message){
 //			Email Sender - - - End
 //////////////////////////////////////////////////////////////////////////////
 
+ function createEl(elObj, parent) {
+   var el;
+   if (typeof elObj == 'string') {
+      el = document.createTextNode(elObj);
+   }
+   else {
+      el = document.createElement(elObj.n);
+      if (elObj.a) {
+         attributes = elObj.a;
+         for (var key in attributes) if (attributes.hasOwnProperty(key)) {
+            if (key.charAt(0) == '@')
+               el.setAttribute(key.substring(1), attributes[key]);
+            else 
+               el[key] = attributes[key];
+         }
+      }
+      if (elObj.evl) {
+         el.addEventListener(elObj.evl.type, elObj.evl.f, elObj.evl.bubble);
+      }
+      if (elObj.c) {
+         elObj.c.forEach(function (v, i, a) { createEl(v, el); });
+      }
+   }
+   if (parent)
+      parent.appendChild(el);
+   return el;
+ }
+
 GetRace();
 
