@@ -47,7 +47,7 @@ function ShowMarketPlus()
 		}
 		catch (e)
 		{
-			alert(e);
+			window.status = e;
 		}
 	}
 
