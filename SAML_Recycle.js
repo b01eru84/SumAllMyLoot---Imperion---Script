@@ -69,7 +69,8 @@ function OnCometEnterComplete (event) {
 			//tdNou2.innerHTML = Math.floor(NumberOfRecyclers).toString()+" - "+Math.ceil(NumberOfRecyclers).toString();
 			NewElement(tdNou2,
 						"a",
-						Math.floor(NumberOfRecyclers).toString()+" - "+Math.ceil(NumberOfRecyclers).toString(),
+						//Math.floor(NumberOfRecyclers).toString()+" - "+Math.ceil(NumberOfRecyclers).toString(),
+						Math.floor(NumberOfRecyclers).toString()+" + "+((NumberOfRecyclers - Math.floor(NumberOfRecyclers))*100).toFixed(2).toString()+" %",
 						["href",
 							"class"],
 						[text+","+(Math.floor(NumberOfRecyclers)==0?1:Math.floor(NumberOfRecyclers)).toString(),
@@ -88,7 +89,8 @@ function OnCometEnterComplete (event) {
 				//tdNou4.innerHTML = Math.floor(NumberOfBigRecyclers).toString()+" - "+Math.ceil(NumberOfBigRecyclers).toString();
 				NewElement(tdNou4,
 						"a",
-						Math.floor(NumberOfBigRecyclers).toString()+" - "+Math.ceil(NumberOfBigRecyclers).toString(),
+						//Math.floor(NumberOfBigRecyclers).toString()+" - "+Math.ceil(NumberOfBigRecyclers).toString(),
+						Math.floor(NumberOfBigRecyclers).toString()+" + "+((NumberOfBigRecyclers - Math.floor(NumberOfBigRecyclers))*100).toFixed(2).toString()+" %",
 						["href",
 							"class"],
 						[text+(Math.floor(NumberOfBigRecyclers)==0?1:Math.floor(NumberOfBigRecyclers)).toString(),
@@ -127,7 +129,8 @@ function OnAsteroidEnterComplete(event) {
 			//tdNou2.innerHTML = Math.floor(NumberOfRecyclers).toString()+" - "+Math.ceil(NumberOfRecyclers).toString();
 			NewElement(tdNou2,
 						"a",
-						Math.floor(NumberOfRecyclers).toString()+" - "+Math.ceil(NumberOfRecyclers).toString(),
+						//Math.floor(NumberOfRecyclers).toString()+" - "+Math.ceil(NumberOfRecyclers).toString(),
+						Math.floor(NumberOfRecyclers).toString()+" + "+((NumberOfRecyclers - Math.floor(NumberOfRecyclers))*100).toFixed(2).toString()+" %",
 						["href",
 							"class"],
 						[text+","+(Math.floor(NumberOfRecyclers)==0?1:Math.floor(NumberOfRecyclers)).toString(),
@@ -146,7 +149,8 @@ function OnAsteroidEnterComplete(event) {
 				//tdNou4.innerHTML = Math.floor(NumberOfBigRecyclers).toString()+" - "+Math.ceil(NumberOfBigRecyclers).toString();
 				NewElement(tdNou4,
 						"a",
-						Math.floor(NumberOfBigRecyclers).toString()+" - "+Math.ceil(NumberOfBigRecyclers).toString(),
+						//Math.floor(NumberOfBigRecyclers).toString()+" - "+Math.ceil(NumberOfBigRecyclers).toString(),
+						Math.floor(NumberOfBigRecyclers).toString()+" + "+((NumberOfBigRecyclers - Math.floor(NumberOfBigRecyclers))*100).toFixed(2).toString()+" %",
 						["href",
 							"class"],
 						[text+(Math.floor(NumberOfBigRecyclers)==0?1:Math.floor(NumberOfBigRecyclers)).toString(),
@@ -181,10 +185,11 @@ function OnDebrisEnterComplete(event) {
 			NewElement(tdNou1,"a",RecyclerName[race-1],["href","class"],[text+","+(Math.floor(NumberOfRecyclers)==0?1:Math.floor(NumberOfRecyclers)).toString(),"fontColorRace"]);			
 			trNou1.appendChild(tdNou1);
 			var tdNou2 = document.createElement("td");			
-			//tdNou2.innerHTML = Math.floor(NumberOfRecyclers).toString()+" - "+Math.ceil(NumberOfRecyclers).toString();
+			//tdNou2.innerHTML = Math.floor(NumberOfRecyclers).toString()+" - "+Math.ceil(NumberOfRecyclers).toString();			
 			NewElement(tdNou2,
 						"a",
-						Math.floor(NumberOfRecyclers).toString()+" - "+Math.ceil(NumberOfRecyclers).toString(),
+						//Math.floor(NumberOfRecyclers).toString()+" - "+Math.ceil(NumberOfRecyclers).toString(),
+						Math.floor(NumberOfRecyclers).toString()+" + "+((NumberOfRecyclers - Math.floor(NumberOfRecyclers))*100).toFixed(2).toString()+" %",						
 						["href",
 							"class"],
 						[text+","+(Math.floor(NumberOfRecyclers)==0?1:Math.floor(NumberOfRecyclers)).toString(),
@@ -203,7 +208,8 @@ function OnDebrisEnterComplete(event) {
 				//tdNou4.innerHTML = Math.floor(NumberOfBigRecyclers).toString()+" - "+Math.ceil(NumberOfBigRecyclers).toString();
 				NewElement(tdNou4,
 						"a",
-						Math.floor(NumberOfBigRecyclers).toString()+" - "+Math.ceil(NumberOfBigRecyclers).toString(),
+						//Math.floor(NumberOfBigRecyclers).toString()+" - "+Math.ceil(NumberOfBigRecyclers).toString(),
+						Math.floor(NumberOfBigRecyclers).toString()+" + "+((NumberOfBigRecyclers - Math.floor(NumberOfBigRecyclers))*100).toFixed(2).toString()+" %",
 						["href",
 							"class"],
 						[text+(Math.floor(NumberOfBigRecyclers)==0?1:Math.floor(NumberOfBigRecyclers)).toString(),
