@@ -4,8 +4,7 @@
 *
 */
 
-var marketDiv = document.getElementById('market');					
-var maxTraderCap = marketDiv.children[0].rows[1].cells[0].innerHTML.match(/\d+/g).join("");
+
 
 function ShowMarketPlus()
 {
@@ -56,6 +55,8 @@ function ShowMarketPlus()
 
 function metalLinkClick()
 {
+	var marketDiv = document.getElementById('market');					
+	var maxTraderCap = marketDiv.children[0].rows[1].cells[0].innerHTML.match(/\d+/g).join("");
 	var table = document.forms[0].children[2];
 	var theTable = table.rows[1].cells[1].children[0];
 	var metalInput = document.getElementById('resourceInputR1');
@@ -69,6 +70,8 @@ function metalLinkClick()
 
 function metalMinusLinkClick()
 {
+	var marketDiv = document.getElementById('market');					
+	var maxTraderCap = marketDiv.children[0].rows[1].cells[0].innerHTML.match(/\d+/g).join("");
 	var table = document.forms[0].children[2];
 	var theTable = table.rows[1].cells[1].children[0];
 	var metalInput = document.getElementById('resourceInputR1');
@@ -82,6 +85,8 @@ function metalMinusLinkClick()
 
 function crystalLinkClick()
 {
+	var marketDiv = document.getElementById('market');					
+	var maxTraderCap = marketDiv.children[0].rows[1].cells[0].innerHTML.match(/\d+/g).join("");
 	var table = document.forms[0].children[2];
 	var theTable = table.rows[1].cells[1].children[0];
 	var crystalInput = document.getElementById('resourceInputR2');
@@ -95,6 +100,8 @@ function crystalLinkClick()
 
 function crystalMinusLinkClick()
 {
+	var marketDiv = document.getElementById('market');					
+	var maxTraderCap = marketDiv.children[0].rows[1].cells[0].innerHTML.match(/\d+/g).join("");
 	var table = document.forms[0].children[2];
 	var theTable = table.rows[1].cells[1].children[0];
 	var crystalInput = document.getElementById('resourceInputR2');
@@ -108,6 +115,8 @@ function crystalMinusLinkClick()
 
 function deutLinkClick()
 {
+	var marketDiv = document.getElementById('market');					
+	var maxTraderCap = marketDiv.children[0].rows[1].cells[0].innerHTML.match(/\d+/g).join("");
 	var table = document.forms[0].children[2];
 	var theTable = table.rows[1].cells[1].children[0];
 	var deutInput = document.getElementById('resourceInputR3');
@@ -121,6 +130,8 @@ function deutLinkClick()
 
 function deutMinusLinkClick()
 {
+	var marketDiv = document.getElementById('market');					
+	var maxTraderCap = marketDiv.children[0].rows[1].cells[0].innerHTML.match(/\d+/g).join("");
 	var table = document.forms[0].children[2];
 	var theTable = table.rows[1].cells[1].children[0];
 	var deutInput = document.getElementById('resourceInputR3');
@@ -134,6 +145,8 @@ function deutMinusLinkClick()
 
 function calculateTraders(currObj)
 {
+	var marketDiv = document.getElementById('market');					
+	var maxTraderCap = marketDiv.children[0].rows[1].cells[0].innerHTML.match(/\d+/g).join("");
 	var marketDiv = document.getElementById('market');					
 	var availTraders = marketDiv.children[0].rows[0].cells[2].children[0].innerHTML.match(/\d+/g)[0];
 	var metalInput = parseInt(document.getElementById('resourceInputR1').value);
