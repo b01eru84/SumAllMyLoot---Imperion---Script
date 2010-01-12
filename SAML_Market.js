@@ -12,9 +12,9 @@ function ShowMarketPlus()
 	if (isMarket)
 	{
 		try
-		{						
-			var table = document.forms[0].children[2];
-			var theTable = table.rows[1].cells[1].children[0];			
+		{				
+			var atable = document.getElementsByClassName("fieldSet floatLeft")[0].getElementsByTagName("tbody")[0];			
+			var theTable = atable.getElementsByTagName("tbody")[0];
 			//coloana +
 			theTable.rows[0].insertCell(-1);
 			theTable.rows[1].insertCell(-1);
@@ -48,6 +48,7 @@ function ShowMarketPlus()
 		catch (e)
 		{
 			window.status = e;
+			//alert(e);
 		}
 	}
 
@@ -55,10 +56,11 @@ function ShowMarketPlus()
 
 function metalLinkClick()
 {
+try{
 	var marketDiv = document.getElementById('market');					
-	var maxTraderCap = marketDiv.children[0].rows[1].cells[0].innerHTML.match(/\d+/g).join("");
-	var table = document.forms[0].children[2];
-	var theTable = table.rows[1].cells[1].children[0];
+	var maxTraderCap = marketDiv.getElementsByTagName("table")[0].getElementsByTagName("tbody")[0].rows[1].cells[0].innerHTML.match(/\d+/g).join("");
+	var table = document.getElementsByClassName("fieldSet floatLeft")[0];
+	var theTable = table.rows[1].cells[1].childNodes[0];
 	var metalInput = document.getElementById('resourceInputR1');
 	var currValue = parseInt(metalInput.value);
 	if (isNaN(currValue))
@@ -66,14 +68,16 @@ function metalLinkClick()
 	var newValue = parseInt(currValue + parseInt(maxTraderCap));
 	metalInput.value = newValue;
 	calculateTraders(metalInput);
+}catch(e){window.status = e;}
 }
 
 function metalMinusLinkClick()
 {
+try{
 	var marketDiv = document.getElementById('market');					
-	var maxTraderCap = marketDiv.children[0].rows[1].cells[0].innerHTML.match(/\d+/g).join("");
-	var table = document.forms[0].children[2];
-	var theTable = table.rows[1].cells[1].children[0];
+	var maxTraderCap = marketDiv.getElementsByTagName("table")[0].getElementsByTagName("tbody")[0].rows[1].cells[0].innerHTML.match(/\d+/g).join("");
+	var table = document.getElementsByClassName("fieldSet floatLeft")[0];
+	var theTable = table.rows[1].cells[1].childNodes[0];
 	var metalInput = document.getElementById('resourceInputR1');
 	var currValue = parseInt(metalInput.value);
 	if (isNaN(currValue))
@@ -81,14 +85,16 @@ function metalMinusLinkClick()
 	var newValue = Math.max(0, parseInt(currValue - parseInt(maxTraderCap)));
 	metalInput.value = newValue;
 	calculateTraders(metalInput);
+}catch(e){window.status = e;}
 }
 
 function crystalLinkClick()
 {
+try{
 	var marketDiv = document.getElementById('market');					
-	var maxTraderCap = marketDiv.children[0].rows[1].cells[0].innerHTML.match(/\d+/g).join("");
-	var table = document.forms[0].children[2];
-	var theTable = table.rows[1].cells[1].children[0];
+	var maxTraderCap = marketDiv.getElementsByTagName("table")[0].getElementsByTagName("tbody")[0].rows[1].cells[0].innerHTML.match(/\d+/g).join("");
+	var table = document.getElementsByClassName("fieldSet floatLeft")[0];
+	var theTable = table.rows[1].cells[1].childNodes[0];
 	var crystalInput = document.getElementById('resourceInputR2');
 	var currValue = parseInt(crystalInput.value);
 	if (isNaN(currValue))
@@ -96,14 +102,16 @@ function crystalLinkClick()
 	var newValue = parseInt(currValue + parseInt(maxTraderCap));
 	crystalInput.value = newValue;
 	calculateTraders(crystalInput);
+}catch(e){window.status = e;}
 }
 
 function crystalMinusLinkClick()
 {
+try{
 	var marketDiv = document.getElementById('market');					
-	var maxTraderCap = marketDiv.children[0].rows[1].cells[0].innerHTML.match(/\d+/g).join("");
-	var table = document.forms[0].children[2];
-	var theTable = table.rows[1].cells[1].children[0];
+	var maxTraderCap = marketDiv.getElementsByTagName("table")[0].getElementsByTagName("tbody")[0].rows[1].cells[0].innerHTML.match(/\d+/g).join("");
+	var table = document.getElementsByClassName("fieldSet floatLeft")[0];
+	var theTable = table.rows[1].cells[1].childNodes[0];
 	var crystalInput = document.getElementById('resourceInputR2');
 	var currValue = parseInt(crystalInput.value);
 	if (isNaN(currValue))
@@ -111,14 +119,16 @@ function crystalMinusLinkClick()
 	var newValue = Math.max(0, parseInt(currValue - parseInt(maxTraderCap)));
 	crystalInput.value = newValue;
 	calculateTraders(crystalInput);
+}catch(e){window.status = e;}
 }
 
 function deutLinkClick()
 {
+try{
 	var marketDiv = document.getElementById('market');					
-	var maxTraderCap = marketDiv.children[0].rows[1].cells[0].innerHTML.match(/\d+/g).join("");
-	var table = document.forms[0].children[2];
-	var theTable = table.rows[1].cells[1].children[0];
+	var maxTraderCap = marketDiv.getElementsByTagName("table")[0].getElementsByTagName("tbody")[0].rows[1].cells[0].innerHTML.match(/\d+/g).join("");
+	var table = document.getElementsByClassName("fieldSet floatLeft")[0];
+	var theTable = table.rows[1].cells[1].childNodes[0];
 	var deutInput = document.getElementById('resourceInputR3');
 	var currValue = parseInt(deutInput.value);
 	if (isNaN(currValue))
@@ -126,14 +136,16 @@ function deutLinkClick()
 	var newValue = parseInt(currValue + parseInt(maxTraderCap));
 	deutInput.value = newValue;
 	calculateTraders(deutInput);
+}catch(e){window.status = e;}
 }
 
 function deutMinusLinkClick()
 {
+try{
 	var marketDiv = document.getElementById('market');					
-	var maxTraderCap = marketDiv.children[0].rows[1].cells[0].innerHTML.match(/\d+/g).join("");
-	var table = document.forms[0].children[2];
-	var theTable = table.rows[1].cells[1].children[0];
+	var maxTraderCap = marketDiv.getElementsByTagName("table")[0].getElementsByTagName("tbody")[0].rows[1].cells[0].innerHTML.match(/\d+/g).join("");
+	var table = document.getElementsByClassName("fieldSet floatLeft")[0];
+	var theTable = table.rows[1].cells[1].childNodes[0];
 	var deutInput = document.getElementById('resourceInputR3');
 	var currValue = parseInt(deutInput.value);
 	if (isNaN(currValue))
@@ -141,14 +153,16 @@ function deutMinusLinkClick()
 	var newValue = Math.max(0, parseInt(currValue - parseInt(maxTraderCap)));
 	deutInput.value = newValue;
 	calculateTraders(deutInput);
+}catch(e){window.status = e;}
 }
 
 function calculateTraders(currObj)
 {
+try{
 	var marketDiv = document.getElementById('market');					
-	var maxTraderCap = marketDiv.children[0].rows[1].cells[0].innerHTML.match(/\d+/g).join("");
-	var marketDiv = document.getElementById('market');					
-	var availTraders = marketDiv.children[0].rows[0].cells[2].children[0].innerHTML.match(/\d+/g)[0];
+	var maxTraderCap = marketDiv.getElementsByTagName("table")[0].getElementsByTagName("tbody")[0].rows[1].cells[0].innerHTML.match(/\d+/g).join("");
+	//var marketDiv = document.getElementById('market');					
+	var availTraders = marketDiv.getElementsByTagName("table")[0].getElementsByTagName("tbody")[0].rows[0].cells[2].getElementsByTagName("div")[0].innerHTML.match(/\d+/g)[0];
 	var metalInput = parseInt(document.getElementById('resourceInputR1').value);
 	var crystalInput = parseInt(document.getElementById('resourceInputR2').value);
 	var deutInput = parseInt(document.getElementById('resourceInputR3').value);
@@ -171,6 +185,7 @@ function calculateTraders(currObj)
 		document.getElementById('resourceInputR2').setAttribute('style', '');
 		document.getElementById('resourceInputR3').setAttribute('style', '');
 	}		
+}catch(e){window.status = e;}
 }
 
 ShowMarketPlus();
