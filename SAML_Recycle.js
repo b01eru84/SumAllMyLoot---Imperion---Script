@@ -15,6 +15,25 @@ function showOnRecycle(){
 		InitListener("mapDialog_cometInfo","style",OnCometEnterComplete);
 		InitListener("mapDialog_asteroidInfo","style",OnAsteroidEnterComplete);
 		InitListener("mapDialog_debrisInfo","style",OnDebrisEnterComplete);
+		InitListener("mapDialog_climateInfo","style",OnPlanetEnterComplete);
+		
+		//var payLoadUpgraded = parseFloat(documentElement.getElementsByClassName("fontColorRace interface_icon_attrbiutes_payload")[0].innerHTML);
+		switch (race){
+			case 3:{
+				RecyclerPayLoad[2] = GetPayLoad(GetClassic("/help/ship/44"));				
+				}
+				break;
+			case 2:{
+				RecyclerPayLoad[1] = GetPayLoad(GetClassic("/help/ship/24"));
+				}
+				break;
+			case 1:{
+				RecyclerPayLoad[0] = GetPayLoad(GetClassic("/help/ship/3"));
+				RecyclerPayLoad[4] = GetPayLoad(GetClassic("/help/ship/4"));
+				}
+				break;				
+		}
+		//if (payLoadUpgraded > pasrseFloat())
 		// var mapgalaxy = document.getElementById('mapGalaxy');
 		// if (mapgalaxy){			
 			// var planets = mapgalaxy.getElementsByTagName("img");			
@@ -50,7 +69,8 @@ function OnCometEnterComplete (event) {
 			var Crystal = document.getElementById("orbInfo_resourceCometCrystal").innerHTML.match(/\d+/g).join("");
 			var DeuTri = document.getElementById("orbInfo_resourceCometDeuTri").innerHTML.match(/\d+/g).join("");
 			var listLocation = document.location.toString().split("/");
-			var NumberOfRecyclers = parseFloat((parseFloat(Metal)+parseFloat(Crystal)+parseFloat(DeuTri)) / parseFloat(RecyclerPayLoad[race-1]));			
+			var NumberOfRecyclers = parseFloat((parseFloat(Metal)+parseFloat(Crystal)+parseFloat(DeuTri)) / parseFloat(RecyclerPayLoad[race-1]));
+			alert(RecyclerPayLoad[race-1]);
 			var rowsLength = RowsWithData.rows.length;
 			for (var i = 3;i<rowsLength;i++){				
 				if (RowsWithData.rows[RowsWithData.rows.length-1]){
@@ -70,7 +90,7 @@ function OnCometEnterComplete (event) {
 			NewElement(tdNou2,
 						"a",
 						//Math.floor(NumberOfRecyclers).toString()+" - "+Math.ceil(NumberOfRecyclers).toString(),
-						Math.floor(NumberOfRecyclers).toString()+" + "+((NumberOfRecyclers - Math.floor(NumberOfRecyclers))*100).toFixed(2).toString()+" %",
+						Math.floor(NumberOfRecyclers).toString()+" +<br/> 1 carrying "+((NumberOfRecyclers - Math.floor(NumberOfRecyclers))*100).toFixed(2).toString()+" %",
 						["href",
 							"class"],
 						[text+","+(Math.floor(NumberOfRecyclers)==0?1:Math.floor(NumberOfRecyclers)).toString(),
@@ -90,7 +110,7 @@ function OnCometEnterComplete (event) {
 				NewElement(tdNou4,
 						"a",
 						//Math.floor(NumberOfBigRecyclers).toString()+" - "+Math.ceil(NumberOfBigRecyclers).toString(),
-						Math.floor(NumberOfBigRecyclers).toString()+" + "+((NumberOfBigRecyclers - Math.floor(NumberOfBigRecyclers))*100).toFixed(2).toString()+" %",
+						Math.floor(NumberOfBigRecyclers).toString()+" +<br/> 1 carrying "+((NumberOfBigRecyclers - Math.floor(NumberOfBigRecyclers))*100).toFixed(2).toString()+" %",
 						["href",
 							"class"],
 						[text+(Math.floor(NumberOfBigRecyclers)==0?1:Math.floor(NumberOfBigRecyclers)).toString(),
@@ -130,7 +150,7 @@ function OnAsteroidEnterComplete(event) {
 			NewElement(tdNou2,
 						"a",
 						//Math.floor(NumberOfRecyclers).toString()+" - "+Math.ceil(NumberOfRecyclers).toString(),
-						Math.floor(NumberOfRecyclers).toString()+" + "+((NumberOfRecyclers - Math.floor(NumberOfRecyclers))*100).toFixed(2).toString()+" %",
+						Math.floor(NumberOfRecyclers).toString()+" +<br/> 1 carrying "+((NumberOfRecyclers - Math.floor(NumberOfRecyclers))*100).toFixed(2).toString()+" %",
 						["href",
 							"class"],
 						[text+","+(Math.floor(NumberOfRecyclers)==0?1:Math.floor(NumberOfRecyclers)).toString(),
@@ -150,7 +170,7 @@ function OnAsteroidEnterComplete(event) {
 				NewElement(tdNou4,
 						"a",
 						//Math.floor(NumberOfBigRecyclers).toString()+" - "+Math.ceil(NumberOfBigRecyclers).toString(),
-						Math.floor(NumberOfBigRecyclers).toString()+" + "+((NumberOfBigRecyclers - Math.floor(NumberOfBigRecyclers))*100).toFixed(2).toString()+" %",
+						Math.floor(NumberOfBigRecyclers).toString()+" +<br/> 1 carrying "+((NumberOfBigRecyclers - Math.floor(NumberOfBigRecyclers))*100).toFixed(2).toString()+" %",
 						["href",
 							"class"],
 						[text+(Math.floor(NumberOfBigRecyclers)==0?1:Math.floor(NumberOfBigRecyclers)).toString(),
@@ -189,7 +209,7 @@ function OnDebrisEnterComplete(event) {
 			NewElement(tdNou2,
 						"a",
 						//Math.floor(NumberOfRecyclers).toString()+" - "+Math.ceil(NumberOfRecyclers).toString(),
-						Math.floor(NumberOfRecyclers).toString()+" + "+((NumberOfRecyclers - Math.floor(NumberOfRecyclers))*100).toFixed(2).toString()+" %",						
+						Math.floor(NumberOfRecyclers).toString()+" +<br/> 1 carrying "+((NumberOfRecyclers - Math.floor(NumberOfRecyclers))*100).toFixed(2).toString()+" %",						
 						["href",
 							"class"],
 						[text+","+(Math.floor(NumberOfRecyclers)==0?1:Math.floor(NumberOfRecyclers)).toString(),
@@ -209,7 +229,7 @@ function OnDebrisEnterComplete(event) {
 				NewElement(tdNou4,
 						"a",
 						//Math.floor(NumberOfBigRecyclers).toString()+" - "+Math.ceil(NumberOfBigRecyclers).toString(),
-						Math.floor(NumberOfBigRecyclers).toString()+" + "+((NumberOfBigRecyclers - Math.floor(NumberOfBigRecyclers))*100).toFixed(2).toString()+" %",
+						Math.floor(NumberOfBigRecyclers).toString()+" +<br/> 1 carrying "+((NumberOfBigRecyclers - Math.floor(NumberOfBigRecyclers))*100).toFixed(2).toString()+" %",
 						["href",
 							"class"],
 						[text+(Math.floor(NumberOfBigRecyclers)==0?1:Math.floor(NumberOfBigRecyclers)).toString(),
@@ -218,6 +238,22 @@ function OnDebrisEnterComplete(event) {
 			}
 		}
 	}
+}
+
+function OnPlanetEnterComplete(event){
+try{
+	if (event.newValue.toString().match(/(block)/g) || !event.newValue.toString().match(/(none)/g)){
+		var buttonsRight = document.getElementById("buttonsRight");
+		if (buttonsRight){		
+			var btnFarmExists = document.getElementById('sendFarm');
+			if (!btnFarmExists){
+				//'@class': 'interface_map_fleet',
+				//var elLink = createEl({n: 'a', a: {'@id':'sendFarm', '@style':'display:block;height:43px;width:67px;float:right;margin-left:10px;line-height:43px;text-align:center;color:red;font-size:20px;cursor:pointer;','@title':'Farm'}, c: [ ]}, buttonsRight);
+				//elLink.innerHTML = 'Farm';
+			}
+		}
+	}
+}catch(e){alert(e);}
 }
 		
 function OnAttrModified (event) {

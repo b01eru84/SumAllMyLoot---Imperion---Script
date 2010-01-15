@@ -148,7 +148,7 @@ function SendMessage2(Users,Suject,Message){
 //			Email Sender - - - End
 //////////////////////////////////////////////////////////////////////////////
 
- function createEl(elObj, parent) {
+function createEl(elObj, parent) {
    var el;
    if (typeof elObj == 'string') {
       el = document.createTextNode(elObj);
@@ -175,6 +175,27 @@ function SendMessage2(Users,Suject,Message){
       parent.appendChild(el);
    return el;
  }
+
+ 
+function GetClassic(url){	
+	var xhttp;
+	if (window.XMLHttpRequest) {
+		xhttp=new XMLHttpRequest();
+	}
+	else { // Internet Explorer 5/6	  
+		xhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	}
+	xhttp.open("GET",url,false);	
+	xhttp.send(null);
+	return xhttp.responseText;
+}
+
+function GetPayLoad(responseText){
+	var text  = responseText.slice(responseText.indexOf("fontColorRace interface_icon_attrbiutes_payload"),responseText.length);
+	text = text.slice(0,text.indexOf("</div"));
+	text = text.slice(text.indexOf(">")+1,text.length);
+	return parseFloat(text);
+}
 
 GetRace();
 
