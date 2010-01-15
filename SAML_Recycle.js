@@ -70,7 +70,6 @@ function OnCometEnterComplete (event) {
 			var DeuTri = document.getElementById("orbInfo_resourceCometDeuTri").innerHTML.match(/\d+/g).join("");
 			var listLocation = document.location.toString().split("/");
 			var NumberOfRecyclers = parseFloat((parseFloat(Metal)+parseFloat(Crystal)+parseFloat(DeuTri)) / parseFloat(RecyclerPayLoad[race-1]));
-			alert(RecyclerPayLoad[race-1]);
 			var rowsLength = RowsWithData.rows.length;
 			for (var i = 3;i<rowsLength;i++){				
 				if (RowsWithData.rows[RowsWithData.rows.length-1]){
@@ -241,7 +240,7 @@ function OnDebrisEnterComplete(event) {
 }
 
 function OnPlanetEnterComplete(event){
-try{
+//try{
 	if (event.newValue.toString().match(/(block)/g) || !event.newValue.toString().match(/(none)/g)){
 		var buttonsRight = document.getElementById("buttonsRight");
 		if (buttonsRight){		
@@ -253,7 +252,7 @@ try{
 			}
 		}
 	}
-}catch(e){alert(e);}
+//}catch(e){alert(e);}
 }
 		
 function OnAttrModified (event) {
