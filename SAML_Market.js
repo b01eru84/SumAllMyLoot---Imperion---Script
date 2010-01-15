@@ -8,7 +8,7 @@
 
 function ShowMarketPlus()
 {
-	var isMarket = document.location.toString().match(/\bmarket\b/g) ||
+	var isMarket = document.location.toString().match(/\bformDirectMarket\b/g) ||
 		document.location.toString().substr(document.location.toString().length - 3, 3)=="450";
 	if (isMarket)
 	{

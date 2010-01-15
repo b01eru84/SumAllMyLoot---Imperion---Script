@@ -10,6 +10,10 @@ var RecyclerPayLoad = new Array(500,1000,800,20000);
 var RecyclerShipLocation = new Array(3,4,4,4);
 var RecyclerName = new Array("Terran Recycler","Recycler","Octopon","Terran Large Recycler");
 
+var shipIDs = [[1, 5, 10, 6, 11, 7, 9, 8, 2, 3, 4, 12],
+	                  [21, 25, 28, 26, 30, 31, 27, 28, 22, 23, 24, 32],
+	                  [41, 48, 45, 42, 50, 51, 43, 46, 47, 49, 44, 52]];
+
 function GetRace(){
 	for (var i = document.styleSheets.length-1; i >= 0; i--) {
 		if (document.styleSheets[i].href.match('terran')) { race = 1; break; }
@@ -176,7 +180,7 @@ function createEl(elObj, parent) {
    return el;
  }
 
- 
+
 function GetClassic(url){	
 	var xhttp;
 	if (window.XMLHttpRequest) {
