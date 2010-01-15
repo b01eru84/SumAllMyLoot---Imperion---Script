@@ -28,8 +28,8 @@ function showOnRecycle(){
 				}
 				break;
 			case 1:{
-				RecyclerPayLoad[0] = GetPayLoad(GetClassic("/help/ship/3"));
-				RecyclerPayLoad[4] = GetPayLoad(GetClassic("/help/ship/4"));
+				RecyclerPayLoad[0] = GetPayLoad(GetClassic("/help/ship/4"));
+				RecyclerPayLoad[3] = GetPayLoad(GetClassic("/help/ship/3"));
 				}
 				break;				
 		}
