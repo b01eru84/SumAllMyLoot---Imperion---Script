@@ -38,7 +38,8 @@ function ShowReportPercent()
            var myFleet = reportDiv.getElementsByClassName('colorWhite width100')[0];
            var capacity = 0;
            for (var i = 0; i < 12; i++) {
-	            capacity += myFleet.rows[2].cells[i+1].innerHTML * CalcShipCapacity(shipIDs[race-1][i]);
+                    if (parseInt(myFleet.rows[2].cells[i+1].innerHTML) > 0)
+	               capacity += myFleet.rows[2].cells[i+1].innerHTML * CalcShipCapacity(shipIDs[race-1][i]);
            }
 
            if (recycleLoot != null)
@@ -49,7 +50,6 @@ function ShowReportPercent()
                        //terani
                        capacity = myFleet.rows[2].cells[10].innerHTML * CalcShipCapacity(shipIDs[race-1][9]);
                        capacity += myFleet.rows[2].cells[11].innerHTML * CalcShipCapacity(shipIDs[race-1][10]);
-                       alert(capacity);
                   break;
                   case 2:
                        //titani
