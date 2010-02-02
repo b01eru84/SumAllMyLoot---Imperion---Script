@@ -6,7 +6,8 @@
 
 function showOnResearchCenter(){
 	var isResearchCenter = document.location.toString().match(/\bresearchCenter\b/g);
-	if (isResearchCenter)
+	if (isResearchCenter  ||
+		document.location.toString().substr(document.location.toString().length - 3, 3)=="410")
 	{
 		//research center
 		var researchCenterMainDiv = document.getElementById('researchCenter');

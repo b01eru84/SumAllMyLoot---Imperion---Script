@@ -42,4 +42,56 @@ function ShowResources()
 	}	
 }
 
+function ShowFleetCount()
+{
+	try
+	{
+		var outAtt = document.getElementById('outgoingAttackContent');		
+		if (outAtt)
+		{
+			var dt = document.createElement('div');
+			dt.setAttribute('id','outAttCount');
+			dt.setAttribute('class', 'fontColorWhite fontCalibri fontSize14 fontBold floatRight');
+			dt.setAttribute('style', 'position: absolute; margin-right:5px; top: 5px; right:16px;');
+			dt.innerHTML = "(" + outAtt.getElementsByTagName('a').length + ")";
+			document.getElementById('outgoingAttackContent').appendChild(dt);		
+		}
+		var incSupp = document.getElementById('incomingSupportContent');		
+		if (incSupp)
+		{
+			var dtincSupp = document.createElement('div');
+			dtincSupp.setAttribute('id','dtincSupp');
+			dtincSupp.setAttribute('class', 'fontColorWhite fontCalibri fontSize14 fontBold floatRight');
+			dtincSupp.setAttribute('style', 'position: absolute; margin-right:5px; top: 5px; right:16px;');
+			dtincSupp.innerHTML = "(" + incSupp.getElementsByTagName('a').length + ")";
+			document.getElementById('incomingSupportContent').appendChild(dtincSupp);		
+		}
+		var outSupp = document.getElementById('outgoingSupportContent');
+		if (outSupp)
+		{
+			var dtoutSupp = document.createElement('div');
+			dtoutSupp.setAttribute('id','outSupp');
+			dtoutSupp.setAttribute('class', 'fontColorWhite fontCalibri fontSize14 fontBold floatRight');
+			dtoutSupp.setAttribute('style', 'position: absolute; margin-right:5px; top: 5px; right:16px;');
+			dtoutSupp.innerHTML = "(" + outSupp.getElementsByTagName('a').length + ")";
+			document.getElementById('outgoingSupportContent').appendChild(dtoutSupp);	
+		}			
+		var incAtt = document.getElementById('incomingAttackContent');	
+		if (incAtt)
+		{
+			var dtincAtt = document.createElement('div');
+			dtincAtt.setAttribute('id','incAtt');
+			dtincAtt.setAttribute('class', 'fontColorWhite fontCalibri fontSize14 fontBold floatRight');
+			dtincAtt.setAttribute('style', 'position: absolute; margin-right:5px; top: 5px; right:16px;');
+			dtincAtt.innerHTML = "(" + incAtt.getElementsByTagName('a').length + ")";
+			document.getElementById('incomingAttackContent').appendChild(dtincAtt);		
+		}
+	}
+	catch (e)
+	{
+		window.status = e;
+	}
+}
+
 ShowResources();
+ShowFleetCount();
