@@ -251,6 +251,27 @@ function OnPlanetEnterComplete(event){
 				//elLink.innerHTML = 'Farm';
 			}
 		}
+		var sendFleet = document.getElementById('sendFleet');
+		if (sendFleet.hasAttribute('style'))
+		{				
+			if (sendFleet.getAttribute('style').indexOf('none;') <= 0)
+			{
+				var listLocation = document.location.toString().split("/")
+				var planetID = listLocation[listLocation.length-1].toString();
+				//var numberOfShips = prompt('Enter number of ships to send');
+				var ships = '';
+				if (race == "3")
+					ships = "600/ships/,,,,,,,,10";
+				else
+					ships = "304/ships/,10";
+				var fleetPos = "";
+				if (race == "3")
+					fleetPos = "fleetPos2";
+				else
+					fleetPos = "fleetPos1";
+				var quick = createEl({n: 'a', a: {'@class': 'fleet3 '+fleetPos+' interface_ships_all'+race, '@id': 'quickSpy', '@style':'cursor: pointer; display:block; position:absolute; left:108px; top:8px;', '@href':'/fleetBase/mission/1/planetId/'+planetID+'/m/'+ships, '@title':'Quick Spy'}, c: [ ]}, buttonsRight);			
+			}
+		}
 	}
 //}catch(e){alert(e);}
 }
